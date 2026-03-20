@@ -1,0 +1,420 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{capt-of}
+\captionsetup[figure]{skip=2pt}
+\usepackage{booktabs}
+\usepackage[
+    backend=biber,
+    style=apa,
+    citestyle=numeric,
+    sorting=nyt,
+    labelnumber=true
+]{biblatex}
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{
+        \mkbibbrackets{\printfield{labelnumber}}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}
+      \setlength{\leftmargin}{\labelwidth}
+      \setlength{\labelsep}{\biblabelsep}
+      \addtolength{\leftmargin}{\labelsep}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}}
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endlist}
+  {\item}
+\addbibresource{sources.bib}
+\newcommand{\celda}[1]{
+	\begin{minipage}{2.5cm}
+		\vspace{5mm}
+		#1
+		\vspace{5mm}
+	\end{minipage}
+}
+\definecolor{azul}{rgb}{0.0, 0.53, 0.74}
+\definecolor{darkred}{rgb}{0.7, 0.2, 0.32}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\author{Dalia Muth}
+\title{Bachelor Thesis}
+
+\begin{document}
+	
+	\begin{figure}[H]
+		\raggedright
+		\includegraphics[scale=0.5]{osna_uni.png} \hfill %\includegraphics[scale=0.35]{villa.png}
+	\end{figure}
+
+	\vspace{7.5mm}
+	
+	\begin{center}
+		{\Large \textbf{Noise-Induced Synchrony and the Effects on Spike Pattern Length in a Spiking Neural Network}}\\
+		\vspace{2mm}
+		{\large Dalia Muth$^{1}$}\\
+		\vspace{7.5mm}
+		$^1$\textit{Osnabrück University, Institute of Cognitive Science, Department for Neuroinformatics} \\
+	\end{center}
+
+	\begin{center}
+		\textcolor{darkred}{\rule{150mm}{0.5mm}}
+	\end{center}		
+
+	\begin{abstract}
+		The brain’s information coding is of high relevance in biological and technical research areas. Two main electrical coding schemes have been identified in neurons, rate code and temporal code. Rate code has received most attention in previous research because of strong and easily identifiable event-correlation results. In recent years, temporal code has gained new interest, specifically on the topic of synchrony, because of the advantages that time-dependent coordination brings. Promising advantages include: increased temporal precision and shorter timescales, signal processing of distributed information, as well as enhanced signal summation. The impact of synchrony can be demonstrated by analyzing the pattern length in a laterally connected neural network, where increased synchrony is expected to shorten pattern length due to parallelization of spiking processes. In this experiment, the effects of noise-induced synchrony on spike pattern length in a spiking neural network were evaluated. The model consists of a single recurrent layer representing a small laterally connected neuron cluster. Synchrony was found to decrease spike pattern length and thus promote efficient information processing for distributed signals.
+		\vspace{2mm}
+		%\underline{\textbf{Palabras clave:}} \hspace{1mm} \textit{palabra1}
+	\end{abstract}
+
+	\begin{center}
+		\textcolor{darkred}{\rule{150mm}{0.5mm}}
+	\end{center}		
+
+	\vspace{5mm}
+
+    
+	
+	\begin{multicols}{2}
+
+        \section{Introduction}
+			Information coding in the human brain is  studied to understand how this complex system of around 86 billion neurons \cite{U} performs an estimate of 6000 thoughts per day \cite{T}. Relevant research concerns the brain’s physical structure on the one hand, and communication and coordination mechanisms on the other. Previous work has revealed detailed insights on the physical structure of the brain as well as lower order mechanisms, but understanding how neuronal mechanisms lead to the thoughts we experience remains a challenge \cite{R}. Different types of neural coding have been detected and researched, with the focus on rate code, because of its consistency in results and easy detection \cite{X, R, L}. Rate-based code conveys information by relating the average pre-synaptic firing frequency to post-synaptic output, where higher pre-synaptic spike counts correlate with stronger or more likely post-synaptic signals. Research on other forms of neural coding is still sparse, because rate code has proven to be reliable, comprehensible, reproducible and robust in its results \cite{X}. Despite some critique and challenges when compared to rate code, temporal code has recently gained interest again \cite{M, L, G}, with the main competitor being synchrony. Synchrony works via a mechanism called \textit{coincidence detection}, which attributes value to correlations between spike timings of different neurons, with promising theoretical advantages [R].
+            
+            In comparison to rate code, synchrony cannot be evaluated on the basis of singular neurons, but relies on multicell analysis \cite{G}. This creates the opportunity of relating spatially distributed but connected signals to coherent patterns of functional importance. It may serve to solve the binding problem that rate code faces, due to it being limited to local operations \cite{G, R}. Spatial distribution of related signals also drastically increases the overall impact of information exchange on the whole neuronal system: With rate code operating on a singular cell level, one information unit is unable to influence the whole system when its information changes, because singular neurons are not connected to every other neuron via short pathways. If in contrast information is encoded in multiple, spatially distributed cells at the same time, information is carried over to other neuron populations by much shorter pathways and with combined, thus increased impact. This does not just enable encoding and decoding at a higher grain of neuronal representation, but also allows for more efficient code forwarding due to spatially distributed parallel processing \cite{R, L}.
+            
+            Increased spatial coverage is only one of the factors where synchrony code leads to increased efficiency, in addition it can operate on very fast timescales. While rate code relies on temporal summation, which works on timescales with the same order of magnitude as the average interspike interval (ISI) \cite{R, Z}, coincidence detection can process information on a few millisecond timescale, which is often only a fraction of the average ISI \cite{R}. This leads to a substantial increase in processing speed. Further increase in efficiency through coincidence detection comes from the nature of synchronized spikes, which have the potential to increased saliency through spatial summation and backpropagating dendrites \cite{G}: For the same amount of absolute spikes, a stronger and more immediate response can be evoked from synchronous spatial summation compared to only temporal summation. In the latter case, post-synaptic spikes are delayed in time by the averaging process, and in the case of low spike frequency, the voltage may remain below the threshold entirely \cite{G, Z}. In summary, synchrony allows for increased efficiency at the temporal and spatial level, which further allows for important metabolic advantages \cite{L}.
+            
+            With the many benefits of synchrony coding, it would be highly unlikely that the nervous system and the brain do not harness it at all. Nonetheless, temporal code does not come without downsides, which is why most of recent research suggests a combination of rate code and synchrony as well as other potential coding schemes to be the most plausible and efficient \cite{L, G, R}.
+            
+            This paper aims to provide further insights into the effect of synchrony on temporal efficiency. In addition, the experiment is supposed to demonstrate that synchrony does not necessarily rely on previous synchronous input, but can emerge from an optimal non-zero amount of noise, which is a biologically plausible initial state in neurons \cite{O, H, A}.
+            
+            Neural noise is the result of the system’s complexity on a molecular level. Ion channel activity, protein production and decomposition, as well as synaptic input artifacts are non-deterministic processes that cause irregular membrane voltage fluctuations \cite{Q}. In contrast to prior beliefs, recent studies have shown that neural noise is not merely a by-product that the system is built to work around, but that it may be of functional biological relevance \cite{Q, P, O}. Furthermore, neural noise was found to support or cause the emergence of synchrony, due to a phenomenon called stochastic resonance \cite{B, P, Q}. Stochastic resonance can occur if neurons receive an oscillatory drive as well as a non-zero amount of noise, which induces synchrony by shifting the activity phases of  different involved neurons. It was also found that in non-linear systems, similar behavior can be induced even without a continuous external oscillatory drive. In this case, increased noise amplitude decreases the variation coefficient, leading to an increase in spike correlations. This phenomenon is referred to as \textit{coherence resonance} [O, P, Q].
+            
+            Another perspective in favor of investigating noise effects on synchrony is research on modeling the brain as a complex dynamical system. Eggermont et al. suggest that the brain possesses key attributes of complex dynamical systems, specifically immense complexity and sensitivity to small changes. Dynamical systems theory offers a potential solution to the question of how small changes on the molecular level could lead to big overall changes manifesting in cognitive states. If we assume the brain to be a complex dynamical system, single-cell activity becomes much less relevant than multi-cell coding, because the functioning of a complex dynamical system relies heavily on its ability to perform global transitions. In the case of the brain, such transitions would be carried out by neuronal activity, with synchrony as a promising candidate to initiate those \cite{W}. Tsuda argues that noise is a relevant component in modeling the brain as a complex dynamical system. He distinguishes between dendritic and synaptic noise, the former defined as spontaneous emissions which may influence sub-threshold behavior, but too weak to activate a postsynaptic spike, whereas the latter is described as stimulus-induced noise, potentially resulting in post-synaptic spikes \cite{Y}. Tsuda also mentions the theory of noise to induce order despite its chaotic behavior \cite{Y}, which drives the hypothesis in this paper.
+            
+            In this paper I propose that (1) noise alone can induce synchrony in a laterally connected spiking neural network and (2) this synchrony is able to shorten spike pattern length. The proposed underlying mechanism is parallelization of processes: Assuming that a pattern running though the network structure induced by only one initial spike will perform one step after another until the pattern is finished, whereas the same pattern induced simultaneously at different points will carried out in parallel, thus runtime will decrease. Consequently the overall pattern length is shortened, leading to increased temporal efficiency.
+
+
+        \section{Related Work}
+            Theoretical arguments for the interest in synchrony were laid out in the introduction, however, experimental evidence on biological plausibility is crucial to justify further scientific investigation. The main criticism synchrony code receives is the possibility of it being an epiphenomenon without any efficacy \cite{G}. To counter this criticism, new research has to prove that synchrony has functional importance by providing evidence of synchrony correlating with behavior independent of modulations in firing rate.
+            Different in vivo experiments have shown the functional role of synchrony in attention and arousal states, cognitive tasks, for perception, expectancy and sensory mechanisms \cite{G}.
+            
+            Olfactory processing is one sensory area where synchrony has been shown to be of functional significance. Olfactory pathways in locusts were found to harness synchrony as a coding scheme for odor distinction. When synchrony was disrupted, odor selectivity in some neurons decreased and hence their discrimination ability was impaired \cite{ZL}. A similar experiment with additional behavioral testing in bees confirmed the hypothesis that oscillatory synchronization in neurons at an early processing stage of the olfactory pathway codes for odor specificity. When synchronization of those neurons was inhibited, neurons that were activated later in the chain did not receive the input they needed for discrimination. Most importantly, this result was observed without significant changes in the firing rate of the desynchronized neurons, concluding functional importance of synchrony \cite{ZM}.
+            
+            Evidence about the role of synchrony in perception comes from a study of cats with strabismic amblyopia, which is a condition where in order to avoid double vision, one eye becomes the dominant source for visual information, and the other eye develops perceptual deficits due to reduced usage. Synchronization of neuron pairs corresponding to either of the eyes were compared and it was found that neuron pairs connected to the normal eye showed significantly higher synchronization than pairs of the non-dominant eye. The observed effect was even stronger when cats were shown stimuli of different gratings, namely a coarse grating that could be identified reliably with both eyes, and a fine grating that was perceptible only with the normally functioning eye. For the normal eye, with finer gratings the response amplitude of neurons decreased, while synchronization remained stable. For the amblyopic eye, response amplitude as well as synchrony decreased. These results underline predictions that conditions where the amblyopic eye is at an even stronger disadvantage, lead to even weaker synchronization. It has to be emphasized that the change in synchrony was not accompanied by firing rate modulations, which suggests that decreased synchronization is functionally correlated with impaired perception \cite{ZA}. A similar study investigated cats with interocular rivalry, a condition where one eye acts dominant over the other at every point in time, with dominance switching between eyes, but one eye usually favored. The cats were shown either congruent stimuli, where both eyes were presented with the same image, or incongruent stimuli, where each eye received a different image. For the incongruent condition, synchrony in neuron pairs corresponding to the dominant eye increased, while synchrony in neurons of the non-dominant eye decreased. Additionally to synchrony, firing rates of those same neurons were analyzed and displayed no significant changes when switching from the congruent to the incongruent stimulus. These findings of significant reduction in synchrony for the perceptually impaired eye, independently of firing rate, support the theory that synchrony code is used for perceptual processing in the brain. Results may also imply the role of synchrony in attentional mechanisms \cite{ZB}.
+
+            Further evidence for the importance of synchrony in cognitive processes can be derived when looking at the brain structes where synchrony is found. Higher order cortical areas show increased synchrony compared to lower-order cortical areas. This synchrony gradient correlates with the degree of lateral interconnectivity, where the more strongly interconnected higher order cortical areas appear to utilize synchrony code more often than lower-order cortical areas, which are less densely laterally connected. The latter is presumed to mostly harness rate code. This makes sense considering the nature of synchrony code, which is reliant on strong internal communication for coordination of spike times, whereas rate code is more effective in detecting feedforward drive, as it cannot interpret distributed information \cite{L}. These findings are in line with the observations that synchrony connects behaviorally to attention and perception, which final processing stages happen in higher order cortical areas \cite{G}.
+            
+            The role of synchrony was also investigated in the somatosensory and motor cortex. Synchronization was found to be greater in exploratory and self-organized movement tasks, rather than constrained and directed tasks \cite{ZC}. A specific correlation to movement execution was not found so far; synchrony was associated with the movement preparation period or the anticipation of movement, but was found to dissolve right before the onset of movement \cite{ZC, ZE, ZF}. Importantly, emergence of synchrony in the movement anticipation period was independent of firing rate changes \cite{ZE}. These findings suggest that synchrony is not necessarily used to code for actual movement execution, but rather supports hypotheses of synchrony as a code for cognition, specifically perception and attention processes, such as binding of perceptual features or the mental separation of foreground and background \cite{ZC, ZE, ZF}. De Oliveira et al. derive a potential feature binding mechanism from their results showing that most synchronized neuron pairs in their experiment had the same stimulus preference \cite{ZF}. Murthy and Fetz proposed that an attentional mechanism could be carried out through synchrony code by simultaneously pushing assemblies of neurons that are attending to the same stimulus closer to firing threshold \cite{ZC}.
+            
+            While in vivo experiments are necessary to prove biological plausibility, studying the theoretical potentials of synchrony in computational models is another crucial field of research. The field has revealed the potential of synchrony to provide a mechanism that can store familiarity and memory information, where the structure of connectivity in a neuronal network can represent known patterns \cite{L, M}. Memory by synchrony operates through Hebbian plasticity, a long-term potentiation mechanism where neurons that fire together repeatedly strengthen their connections \cite{A, L}. Experiments like these not only enable future research to form hypotheses of potential biological mechanisms to then be tested in vivo, they also support technological progress and thus stay highly relevant.
+            
+            In summary, in vivo experiments on the one hand have gathered evidence for the functional role of synchrony in some areas of sensory processing, as well as for cognitive functions, such as perception, attention and grouping of stimuli. On the other hand, experiments that model synchrony such as this paper, support this process and provide valuable insights about this coding scheme from a different angle.
+
+    
+		\section{The Model}
+        \subsection{Layer Setup and Recurrency}
+			To examine how sub-threshold noise affects and induces synchrony, a spiking neural network (SNN) model was set up with a single recurrent layer. Recurrent layers as well as spiking neurons are not the standard procedure in current ANN research \cite{AA, AB}. Many ANN architectures rely on non-recurrent feedforward layers and the majority of artificial neurons utilize continuous activation functions at their synapses \cite{A}. Recurrent ANN layers are commonly used for sequential learning that integrate past input into the next step, however randomly interconnected singular layers as used in this model are uncommon. The recurrent layer in this model mimics a very simple patch of lateral connections with a certain connectivity probability, which is a structure shown to facilitate synchrony. The mechanism enabling synchrony in such networks is a recurring communication among neurons, leading to a self-organized adaptation to each other’s patterns through cross-activation \cite{L, AC}. The choice of one singular layer over multiple connected recurrent layers, as would be more biologically plausible, was made to keep results and evaluation simplistic and to reduce computational load to a minimum.
+            
+        \subsection{The Artificial Neuron}           
+            Neurons with continuous activation functions have mathematical advantages: due to their comparably simple derivatives, backpropagation using gradient descent, which is the current dominating learning algorithm for ANNs, can easily be implemented \cite{A, AD}. Spiking neural networks use a different type of integration at the synapse, where inputs sum up as binary inputs and create binary outputs, instead of continuous weights integrated under a continuous function. Those binary outputs of spiking artificial neurons more closely, but not completely, reflect how biological neurons integrate. Very simply put, they communicate with the generation of a spike or no spike resulting from spike inputs. In biological neurons this is mediated by another complex, partially continuous process, but in SNNs a simpler mathematical formula is used \cite{A}. Neuronal integration in this paper was computed with the Leaky-Integrate-and-Fire (LIF) formula, a simple analytical application of membrane time constant, firing threshold and refractory period, on an abstract level similar to the mechanism observed in biological neurons \cite{E}.
+            
+        \subsection{Connectivity}
+            Working with only one recurrent layer, a singular connectivity matrix of \verb+[to_neurons x from_neurons]+ was set up, with zeros representing no connections and weights inserted for neuron connections. The matrix is initialized with all zeros and then can be filled either manually or with a function automatically setting random connections at a connectivity percentage of choice. The \textit{auto connect} function ensures that connections are relatively balanced. This means that each neuron is connected to a similar number of neurons in order to ensure the whole network is interconnected rather than forming separated sub-networks, and that each neuron gets a similar amount of inputs at full activation. Unbalanced connections would likely decrease synchrony, since optimal adaptation to other neurons relies on short pathway feedback loops. With a balanced approach like in this model, each neuron is connected to each neuron in the network through few connections, facilitating quick communication. For the random connections a seed was used for reproducibility.
+            
+            Additionally an input matrix was set up with \verb+[neurons x timesteps]+, if for example poisson inputs are supposed to be added. At default mode the input matrix is set to all zeros.
+            
+            For analytical simplicity, the weights of the model were kept exclusively excitatory. Although some previous work has suggested that a balance of excitatory and inhibitory connections is favorable when trying to achieve synchrony, other recent studies show that inhibitory connections are not a hard requirement for synchrony \cite{M}.
+
+
+        \subsection{Voltage Input}
+            In modeling spiking networks it is common practice to simulate input from another connected neuron population or randomly drawn from a poisson distribution, to mimick input as observed in biological neuron populations \cite{F, M, O}. For this model a spike input matrix was set up exclusively as an option to test code functionality and for easier debugging. In the main experiment, input to neurons was given solely in the form of noise and lateral connections. The purpose of refraining from additional input was to isolate the noise effect, in order to test the experimental hypothesis.
+            
+        \subsection{Integration}
+            In the integration step of the code, the voltage is updated per neuron and time step by the LIF calculation. The formula takes input currents and noise of the previous time step and calculates a membrane voltage update. The function then checks for the refractory period, where for all cases that are not in refractory, membrane voltage is compared to the threshold voltage and then updated. In the case that the neuron spiked after the voltage update the last step is to reset the membrane voltage to the resting potential. Each of these steps is performed along the full neuron vector for one time step in at the same time, because vector calculations are highly computationally efficient compared to loops. Code from Zemliak et al. 2025 was used as a template to build this structure and adapted according to the simplified experimental use case \cite{L}. In the LIF formula (see \textit{Methods 10.1}), voltage calculations modified by input currents are divided by the product of delta time and membrane time constant. Delta time represents the step size operated on, here set to 1 ms steps for simplicity. Analytically, the membrane time constant is the product of membrane capacitance and membrane resistance, which describes the rate at which the membrane rises or falls in biological neurons. The membrane time constant was set to 10, which lies within the biological range \cite{S}.
+            
+        \subsection{Simulation}
+            The textit{simulate} function takes care of running through each time step of the spiking neural network simulation. Voltage and spikes are recorded in separate matrices right after each integration time step. The integration function inside the time steps loop is fed with the external and lateral input current matrices combined into one matrix by a dot product. External input represents extra input, which was set to zero in the final experiment of this paper. Lateral input represents the weights of connected input neurons that fired in the previous time step. Noise is added inside the integration function instead of combined into the input current matrix. Again, code from Zemliak et al. was used as a template to build this structure and adapted according to the simplified experimental use case \cite{L}. For more accurate visualization another voltage matrix was added in this paper, where voltage was recorded twice per time step, once at the point where input currents have freshly changed the voltage, and once after a potential spike. In the case of a spike this leads to two different voltage recordings, as the voltage is reset after the spike. Without this double recording the voltage increase right before a spike will be missing from visualizations.
+            
+        \section{Hyperparameter Setup}
+        \subsection{Resting Potential and Firing Threshold}
+            Resting potential and firing threshold in biological neurons are not identical among neurons, as membrane channel configurations differ depending on the neuron's functionality. The firing threshold can be influenced by spike dynamics as well as intrinsic noise and can thus vary even within a singular neuron \cite{J, Q}. However, for voltage dynamics to allow for spikes, resting potential has to lie in a certain range, depending on the neuron type between -30 and -100 mV \cite{S}. For this model resting potential was set to -65 mV, the mean of the biological range. The firing threshold was chosen according to the typical value in biological neurons, which lies around -55 mV \cite{AE}, which was also used in the model of Zemliak et al. (2025)  \cite{L}.
+
+        \subsection{Refractory Period}
+            The parameter \textit{refractory period} is composed of two factors, the absolute and relative refractory period. In biological neurons, the absolute refractory period refers to the time frame where it is physically impossible for another spike to be fired, because the current spike is still in a depolarization or early repolarization stage, where all sodium channels in the membrane are closed \cite{S}. It also would make no sense to increase voltage in this phase even if it was feasible, because then a spike would not be a standalone high voltage event anymore, instead voltage could hover higher for an extended time frame. This would eliminate the binary nature of electrical coding instances that spikes are observed as. The relative refractory period begins once sodium channels start to recover and potassium channels begin to open for hyperpolarization. This state makes it unlikely to evoke a new spike, but possible in case of very strong input stimulo. In theoretical models, absolute refractory period is implemented at the step of calculating spike summation for the next spike, which can be set prior to running the model. A relative refractory period is usually not explicitly implemented by simpler models, as they utilize a reset to resting potential and disregard hyperpolarization. It can be mimicked however by the slow rise of sub-threshold voltage from resting potential towards the threshold. As long as the voltage is still close to the resting potential, only strong inputs can lead to spikes, whereas once it gets closer to the threshold, spikes are evoked easily.
+            
+            In the first rounds of running this model, absolute refractory period was set to zero, because of the assumption that the slow rise in voltage would act as relative refractory period adding a strong enough refractory effect for this experiment. After the fine-tuning of several hyperparameter values, the absolute refractory period in the main experiment of this paper was set to 3 ms, minimally longer than the average biological range of 1-2 ms, as it turned out to improve visual pattern distinction.
+            
+        \subsection{Noise}
+            The noise in this experiment serves to imitate sub-threshold activity of a neuron. Consistent with biological findings that membrane potential fluctuations can be approximated by a Gaussian distribution, the noise in this experiment was drawn from a Gaussian distribution \cite{O}. Random noise values are added to the voltage input that is calculated in each LIF integration step, with different values per neuron and time step. The experiment was run with noise populations of different Gaussian parameters and the results were compared and analyzed. The range of mean and standard deviation (SD) combinations was chosen to fit the experiment reasonably: The overall heuristic for experimental fit was for the noise to shift membrane voltage of each neuron closely below the firing threshold. This relates to sub-threshold activity observed in biological neurons \cite{F}. To test edge cases, this heuristic was partially loosened. Although the mean of the Gaussian noise was always set to be above zero, small amounts of below zero noise were possible due to a partially high Gaussian standard deviation. In biological neurons negative noise currents are indeed observed, because of below threshold inhibitory neuron activity \cite{F}, however the shift of the Gaussian bell carried out in the different experimental conditions resulted in an imbalance, where some conditions would receive negative input and some would not. Therefore non-clipped Gaussian noise was discarded in the fine-tuning process and experiments were carried out with clipped below zero noise.
+            
+        \subsection{Number of Neurons}
+            The number of neurons was chosen to fit the scope of the project instead of attempting to replicate any specific biological neuron cluster. For better overview and easier testing in the beginning stages, the number of neurons in this project was set to 10. Such a small number of neurons is limited in its informative value, because outcomes may occur due to coincidence rather than a pattern resulting from connection dynamics \cite{AF}. The higher the number of neurons, the more informative the results and the smaller the connectivity percentage necessary to yield a similar outcome. For larger amounts of neurons, the percentage of connection per single neuron can be decreased to achieve a similar global network activity and associated effects. Although the goal for increased informative value pushes towards a higher number of neurons, the choice was also restricted from the top by computational power and aim for visualization readability. The final experiment was carried out with 50 neurons, with a global connectivity percentage 5\%. For comparison: A preliminary version of the network with 10 neurons showed similar activity with a connectivity percentage of 13-15\% per neuron. A network of 100 neurons was tested in the process but visualization could not keep up with this network and the specific experimental outcome did not differ largely from the observations of a 50 neuron spiking neural network.
+            
+        \subsection{Time steps}
+            The number of time steps was adjusted to the needs of the experiment according to two main requirements: (1) The amount of time steps should be sufficient for the membrane potential to reach the threshold multiple times in the majority of noise configurations. (2) Facilitate spike patterns of different lengths to form, shift and stabilize. The main experiment was run for 2000 ms time steps, to give the network time to stabilize its patterns and to ensure the simulation length did not affect the outcome.
+            
+        \section{Experimental Setup}
+		\subsection{Experimental Design}    
+			The experiment was set up as a 11x11x3 factorial design. The first two factors are eleven different selected values of mean and standard deviation for the Gaussian noise distribution, to study the effect of noise. A global weight value of neuronal connections (same weight for each neuron in the network but varied per experimental run) was added as a third factor for network variability, to ensure better reliability of observed effects. Selection methods for the experimental variables are explained in the following
+            
+        \subsection{Initial Condition}
+            For the first time step of the experiment, all neurons are set to different start voltages within a 2 mV range around the resting potential. This was done to ensure closer biological plausibility even at the initial condition, which aims to mimic a randomly observed biological system, where even neurons measured at resting potential are expected to show small variations \cite{O}.
+            
+        \subsection{Experimental Measures}
+            Four different measures were utilized to tune the hyperparameters and examine the validity and results in the experimental condition. For this process \textit{average spike count} and \textit{average interspike interval} (ISI) were recorded. In the experimental condition, synchrony was measured with \textit{Rsync} and a \textit{Average Spike Pattern Pength} measure was set up, with the intention to approximate the time a pattern takes to finish, i.e. the time steps until the whole laterally connected network has been activated and run through its ensemble (see \textit{Methods 10.3}).
+            
+        \subsection{Hyperparameter Tuning}
+            Since the experiment has multiple interacting parameters, some hyperparameter tuning and selection had to be carried out experimentally. Few parameters were set according to literature or technical constraints, which include the number of neurons, the refractory period, number of time steps, the noise distribution, as well as resting potential and firing threshold. The following parameters were selected through a careful procedure: The range of mean and standard deviation values, the global interconnectivity percentage of neurons and global weight connections between individual neurons.
+            
+        \subsubsection{Noise Range} 
+            Noise range was selected first, because of its independence of neuron connectivity in this model, in contrast to connectivity, which is affected by the noise input. For the noise parameter to be of experimental interest, it had to fulfil at least one of two criteria: (1) Push membrane voltage of neurons to values that lie closely below the firing threshold, a behavior observed in biological neurons \cite{F} or (2) have some small potential effect to test edge cases. Voltage was modeled in a tuning experiment where the network was neither interconnected nor provided with a feedforward drive, in order to observe isolated noise behavior for choosing relevant parameters. The range for both mean and standard deviation variables was selected to be 0.1 to 1.1 with these justifications:
+            
+            \textbf{Gaussian Mean}
+
+            a) For low means such as 0.1, (1) was mostly not fulfilled, unless combined with high standard deviation, thus fulfiling condition (2).
+            
+            b) For means of around 0.8 condition (1) was fulfilled.
+            
+            c) Means higher than 0.9 push voltage of some neurons over the firing threshold, thus partially but not completely failing to fulfill condition (1), and also staying relevant for (2). 1.1 was roughly estimated to be the last value to still fulfil condition (2). Means above 1.1 were excluded because most or all neurons would fire constantly from the noise raising voltage above the threshold.
+            
+            \textbf{Gaussian Standard Deviation (SD)}
+            
+            d) Low SD values such as 0.1 fulfilled condition (1) when combined with a high mean.
+            
+            e) SD values above 0.5 were identified to support low means in reaching voltage values close to the threshold, thus necessary to fulfil (1) in some neurons.
+            
+            f) 1.1 was selected as the top limit for SD, although higher values still fulfilled (1) for some neurons when combined with a low mean. The final cut was decided due to the estimate that higher values would not make a substantial difference and because the range had to be limited to fit the scope of the experiment.
+
+        \subsubsection{Network Connectivity} 
+            Neuronal connectivity percentage in biological networks varies depending on the size, location, function and neuronal plasticity of the assembly, the same applies to individual connectivity weights \cite{AG}. Since the model in this paper is simplistic and not built after a certain observed biological network, connectivity values cannot be selected from biological backgrounds, but have to be adjusted to fit this specific model. The first of the two variables to be considered is the global connectivity percentage, which describes the percentage of neurons from the whole network that each individual neuron is connected to. The second variable is the weight value of each interconnection between individual neurons. In the experiment the weight variable is set to a universal value, meaning each lateral connection has the same weight per experimental condition. A universal weight value ensures simplicity and reliability of this experimental variable, however it has to be noted that this is not biologically plausible \cite{AG, AH}. Since the two connectivity variables interact, tuning has to be performed simultaneously; first, different arbitrary combinations were tried, until values offered readable results, i.e. neither over- nor under-stimulation with mean noise conditions. Then, global connectivity percentage was manipulated while the individual weight value was kept fixed, because the former is more sensitive to changes. At this stage of the tuning process, individual connections weights were set to 30. Values were then tuned according to two necessary conditions: (1) Find the lowest combination of both variables to still produce a reliable pattern and (2) choose the lowest global connectivity percentage to still connect all neurons to form one coherent assembly, strictly preventing any sub-networks and disconnected neurons.
+
+            \begin{figure*}[t]
+                \centering
+                \includegraphics[width = \textwidth]{connectivity_network.png}
+                \caption{Laterally Connected 50 Neuron Network}
+                \label{connectivity_network}
+            \end{figure*}
+            
+            \textbf{Global Connectivity Percentage}
+
+            The global connectivity percentage was evaluated by looking at the connection graph of the 50 neuron network. Figure ~\ref{connectivity_network} shows visual examples of different connectivity percentages and their connection density.
+            
+            a) For a global connectivity percentage of 0.01 condition (2) was not fulfilled, where only around half of neurons formed any connection.
+        
+            b) For a value of 0.03, connectivity was still too sparse, with many neurons forming only a single connection.
+        
+            c) A percentage of 0.04 equipped some neurons with only a singular connection, which technically just about fulfilled (1) and (2), but was disregarded to be sure the network was balanced and running smoothly.
+        
+            d) A percentage of 0.05 lateral connectivity in the 50 neuron network was the lowest value to reliably produce a fully connected network with each neuron forming at least two connections, while appear relatively balanced. This value was chosen for the experiment, because it fulfilled both necessary conditions.
+
+            \textbf{Global Connectivity Weigths}
+
+            Universal global connection weights were selected while looking at the average spike count, a good measure for lateral input efficacy. Higher spike counts correlate with stronger lateral connectivity, since neurons get higher input and thus are more likely to spike. At the same time biases are avoided for the critical dependent variables, which are synchrony and spike pattern length. To make sure that effects of lateral connectivity outweigh noise effects, the minimal requirement for the lowest universal weight value was expected to (1) increase spike count by a factor of 1.5 compared to the spike count observed with solely noise input. From the lowest universal weight value fulfilling condition (1), two higher values are supposed to be selected that fulfil condition (2) that the step size between the values results in at least a 10\% increase in spike count. The choice to limit this experimental variable to only three values was made to stay within a reasonable scope for this project.
+            
+            e) Universal weights below 20 mV did not fulfill (1), so they were disregarded. 20 mV was set to be the lowest experimental condition.
+            
+            f) For the following two values, an increase of about 15\% in average spike counts was observed  with a step size of 10 mV. The values 30 mV and 40 mV, fulfilling condition (2), were selected as the remaining two values for the universal weight variable.
+            
+            \textbf{Overview}
+            
+            The completed tuning process resulted in these parameters:
+            - Gaussian mean: 0.1-1.1 (step size 0.1)
+            - Gaussian SD: 0.1-1.1 (step size 0.1)
+            - Global connectivity percentage per neuron: 5\%
+            - Universal lateral connection weights: 20, 30, 40 mV.
+            
+            It has to be noted that a seed was set for reproducibility, thus the experiment did not need to be run more than once in the same experimental condition.
+
+        \section{Predictions}
+            In this paper I hypothesize that (1) synchrony appears with an optimal amount of non-zero noise and that (2) synchrony correlates with a shortening in pattern length due to its parallelization effect. Different noise configurations are expected to yield different results:
+            
+            a) Low noise amplitude combined with low noise variance is predicted to lead to no spikes or few spikes. Since the mean is not close enough to the firing threshold, it does not induce spikes on its own. Low variance will keep values close to the mean, which may only lead to values above the threshold in few cases, where drawn values happen to be large enough. Synchrony is not expected in cases of zero or few firings. Absulute spike pattern lengths are expected to be zero or very short in the case of few spikes, however these do not represent an actual ensemble pattern.
+            
+            b) Low noise amplitude in combination with high noise variance is expected to cause some spikes, which may or may not lead to ensemble patterns. Synchrony is not expected to be high with this noise configuration. Absolute spike pattern length is predicted to be long for ensemble runs and short for individual spikes fired that do not continue to activate the ensemble.
+
+            \begin{figure*}[t]
+                \centering
+                \includegraphics[width=0.8\textwidth]
+                {voltage_noise_only.png}
+                \caption{Voltage Recordings with Zero Interconnectivity in the 600-800ms Window}
+                \label{voltage_noise_only}
+            \end{figure*}
+            
+            c) High noise amplitude with low variance is expected to be the optimal noise configuration for synchrony, because it is predicted to activate multiple neurons at the same time, due to values sticking to a similarly high values for each neuron. This should lead to whole-ensemble activations with parallelized action, which should shorten pattern length compared to noise conditions where fewer neurons are activated simultaneously.
+            
+            d) High noise amplitude combined with high variance is predicted to lead to diverse neuronal activation. On the one hand, high and medium noise values push neurons to go above threshold, starting and continuing the ensemble pattern. On the other hand, the expectation of several very low noise values may prevent certain neurons from firing, even if the lateral connections strongly increase the voltage of those neurons. This may result in some shorter, broken patterns, but mostly longer patterns running through the whole ensemble without efficient parallelization of spikes.
+            
+            Results are expected to show relatively smooth transitions between conditions.
+            
+		\section{Results}
+			First, spike and voltage plots per condition were analyzed, with observations from the 600-800 ms window of the 2000 ms trials, a time stamp where it was estimated that enough time had passed for noise to psuh sub-threshold behavior closely below the firing threshold. There was an overall trend in behavior that was correlated to the noise parameters. In the following section, any mentions of \textit{loc} and \textit{scale} are referring to the Gaussian distribution parameters from which noise values were drawn, with loc considered the mean and scale the variance of the distribution.
+        \subsection{Voltage Analysis}
+            Combinations of low locs and scales keep membrane voltage hovering closely below the firing threshold. Voltage can be observed like a visual band, where higher locs push this band towards higher overall voltage values and higher scales widen the band to span an overall broader range of voltage values. These results are intuitive considering the function of those parameters in a Gaussian distribution: the loc parameter shifts the position of the mean, while the scale parameter shifts the variance, i.e. the breadth of the Gaussian bell. Another important observation not immediately inferred from looking at the distribution is a raise in overall voltage values with increased variance but unchanged loc. This effect is caused frbyom the clipping of below zero noise values (see \textit{Hyperparameter Setup 4.3}). For noise configurations where the Gaussian bell is shifted further into the negative, but then negative values are discarded, higher variance values are drawn in their place and thus the likelihood for higher noise values overall increases. As seen in Figure ~\ref{voltage_noise_only}, where noise was isolated from interconnected neurons (interconnections set to zero), at a loc of 0.1 and scale 0.1 the voltage mean lies around -64 mV, whereas for loc 0.1 and scale 1.1 it rose to about -60 mV, with gradual transition steps for in between scale values. For higher locs this is not observable, because even noise isolated from interconnections leads to frequent or continuous spiking, resulting in a skewed voltage band caused by the voltage resets after spiking, thus is not representative of voltage fluctuations caused by noise exclusively anymore.
+        
+        \subsection{Spike Pattern Analysis}
+            Across connectivity conditions, low loc and scale configurations usually lead to no spikes. Increasing either of the values results in an increase in spikes.
+            
+            For low locs and increasing scales, first few spikes appear that are scattered across neurons (see Figure ~\ref{spikes_patterns} a)). Such spiking behavior does not lead to patterns, because spikes are too sparse. Sparseness despite strong interconnectivity is caused by low overall noise, which is unable to push voltages towards the threshold. Some neurons may receive higher noise input and spike, however following neurons that receive this spike as input are still likely to stay below the threshold, because their voltage is still too far away from it. Thus the ensemble breaks down after one or few spikes, preventing full patterns from being carried through. This results in most parts of the ensemble to neither be triggered by interconnectivity, nor by the noise. As to be expected this effect varies between interconnectivity conditions: For the same noise conditions, higher interconnectivity values result in a longer spike chain, because it is more likely for the next components of the ensemble to be pushed over the threshold if their combined  input (noise + connection weights) is higher (see Figure MISSING).
+
+            \noindent
+            \begin{minipage}{\linewidth}
+                \centering
+                \includegraphics[width=\linewidth]{few_spikes_weights20_loc0.20_scale1.00.png}
+                
+                \includegraphics[width=\linewidth]{broken_patterns_weights20_loc0.60_scale0.70.png}
+                
+                \includegraphics[width=\linewidth]{patterns_weights20_loc0.80_scale0.30.png}
+                
+                \includegraphics[width=\linewidth]{merged_patterns_weights20_loc0.80_scale0.40.png}
+                \captionof{figure}{Spike Behavior in Different Noise Conditions and Corresponding Voltages for 20 mV Connectivity Weights}
+                \vspace{0.5cm}
+                
+                \label{spikes_patterns}
+            \end{minipage}
+            
+            For low locs and increasing scales, patterns begin to emerge visually. At first these patterns appear partially broken and not periodic, spikes still look more scattered than ordered (Figure ~\ref{spikes_patterns} b)). Transitions between no spikes \rightarrow few spikes \rightarrow broken patterns \rightarrow periodic patterns shift depending on the noise configuration as well as the interconnectivity weights. Especially with smaller interconnectivity weights, even for increasing locs and arbitrary scale values separated patterns do not emerge. For interconnectivity weights of 20mV the first clearly distinguishable pattern appears with a loc = 0.7 or loc = 0.8 (Figure ~\ref{spikes_patterns} c)),  while for an interconnectivity weight value of 40mV patterns are distinguishable for the first time at loc = 0.3. Clear patterns appear when the interconnectivity effect outweighs the noise effect. For higher interconnectivity weights, patterns are more quickly separated, because the chance for all neurons in the ensemble to be activated is higher even at lower noise amplitudes. For example, the assembly with a 40mV weight per connection essentially gets double as much interconnectivity voltage input as the assembly with 20mV connection weights. Thus connected neurons are much more likely to fire after their preceding connections have fired, even with lower sub-threshold activity.
+            
+            Further observations are made about the distance of patterns once they emerge. For certain noise and connectivity configurations, patterns appear clearly separated. For 20mV interconnectivity, the first clearly separated full pattern appears at loc = 0.8 and scale = 0.2. This interconnectivity condition already shows emergence of patterns at lower locs but those do not appear clearly separated and potentially incomplete (Figure ~\ref{spikes_patterns} b)). Once patterns are have reached a loc value where they appear clearly separated, with increasing scale they then begin to move closer together until they appear to overlap (Figure ~\ref{spikes_patterns} d)). For clearly separated patterns it appears that the higher the loc, the shorter the pattern length. These observations can be made about all interconnectivity conditions, but the onset of clearly separable patterns occurs with different noise configurations. The higher the interconnectivity weight, the earlier the onset of clearly separable patterns. For none of the connectivity conditions it is visually distinguishable whether pattern size changes with increasing scale but consistent loc. [Both patterns and pattern intervals displayed consistent behavior in length within individual experimental conditions ??? MISSING sense]
+            
+        \subsection {Synchrony Analysis}
+            Next, spike behaviour and synchrony were put into context: For this, spike plots were visually analyzed in the 600-800 ms window as well as the corresponding Rsync values. For all interconnectivity conditions, no spikes result in 0 Rsync and few spikes result in very small sync values, usually below 0.05. 
+            
+            Increasing loc and scale leads to more spikes. For interconnectivity weights of 20 mV, loc = 0.4 with scale = 1.0 leads to increased spikes, but Rsync stays below 0.05, because spikes are still very scattered without visible patterns. This reflects that the effects of interconnectivity are still smaller than the noise effect. At loc = 0.7 with scale = 0.5, this interconnectivity condition first reaches Rsync > 0.05, with visual spike trains slowly separating but yet without reliable full ensemble runs. Loc 0.7 produces some Rsync values over 0.05 correlating with incomplete patterns, but it quickly subsides again with increasing scales. The decrease in synchrony after a peak at scale 0.6 and 0.7 correlates with previous spike patterns beginning to overlap. At loc = 0.8, scale = 0.2 a first onset of higher synchrony (Rsync = 0.21) was recorded. This correlates with first clearly separable and complete ensemble patterns. Here also synchrony steadily dissipates after a certain peak (with loc = 0.8 at scale = 0.3), at the same time as patterns to have moved as close together in time to overlap. Even when synchrony decreases with increased scale, it does not fall below 0.05 until scale = 1.0, where patterns have become inseparable. For this interconnectivity condition a global peak of synchrony (Rsync = 0.59) is reached at loc = 0.9 and scale = 0.1, with the visually shortest patterns . With increasing scale patterns widen and move closer together. At loc = 0.9 and scale = 0.4 sync jumps to a lower value (from Rsync = 0.29 to 0.14), which correlates with the between pattern interval drastically shrinking. Following scales at the same loc begin to overlap. At loc = 0.1 and scale = 0.1 synchrony is still comparably high (Rsync = 0.44) but lower than the previous loc at the same scale value (Rsync = 0.59). This decreased synchrony is reflected in shorter between pattern intervals compared to the previous loc condition. Since 0.1 is the lowest possible scale value in this experiment it can be assumed that synchrony would peak at even smaller scale values, but it is unclear if smaller scale values would be reasonably possible.
+
+            \begin{figure*}[t]
+                \centering
+                \includegraphics[width=\textwidth]{all_syncs.png}
+                \caption{Rsync Results across different Interconnectivity Conditions}
+                \label{fig:label}
+            \end{figure*}
+            
+            For the last loc condition, synchrony begins high again (Rsync = 0.3), with the peak also possibly out of range. Here patterns appear separable and very short, but with an already small between pattern time interval. Because of these short separation intervals, patterns quickly begin to merge as scale increases.
+            
+            For interconnectivity weights of 30mV, synchrony and spike behavior look different to 20mV weights for noise conditions that produce more than a few very scattered spikes. Here, rough patterns that are not coherent yet can reach Rsync values a little over 0.05 already, which can be observed for loc = 0.3, scale >= 1.0 and loc = 0.4, scale >= 0.9. For locs >= 0.5, at a certain scale level synchrony appears and then decreases again after a singular peak. The higher the loc, the earlier and stronger the onset of synchrony: for loc = 0.6 the onset is at scale = 0.5, peaking at scale = 0.7 with an Rsync value of 0.15, and subsides gradually from scale = 0.7 and upwards. For loc = 0.8 the onset of higher synchrony, which already marks its peak for this loc, already appears at scale = 0.2, with a nearly quadrupled Rsync value (= 0.58) compared to loc = 0.6. Synchrony subsides form scale = 0.3 onwards with stronger decreases in synchrony between scale steps. With this observed trend of earlier synchrony onset, it is possible that the peak for any loc > 0.9 falls out of the recording range in this experiment. This would be in line with the observation that locs > 0.9 have decreasing peak values that appear both at scale = 0.1, the lowest possible scale value.
+            
+            Synchrony peaks correlate with the most separable of full patterns, and the decrease of synchrony with higher scale values correlates with degree of pattern overlap. Higher locs result in overall stronger synchrony and shorter full patterns, as long as separability is maintained. This effect can be observed when looking at the global peak of synchrony, which correlates with very short patterns and long between pattern intervals. Decreases in synchrony at higher scales then correlate with smaller separation intervals, but pattern length stays consistent. For loc = 1.1, scale = 0.1, patterns are very short and still separable, with an Rsync value of 0.29. Synchrony is likely only half as strong as the global maximum despite its short intervals, because mathematical pattern separability is not as strong with smaller between pattern intervals, despite clear visual separation.
+            
+            For the last interconnectivity condition with 40mV weights for each lateral connection, synchrony for zero spikes and few scattered spikes behave the same as with the other interconnectivity condition, where zero spikes result in Rsync = 0 and with very few spikes Rsync stays below 0.05. In this interconnectivity condition the onset of synchrony appears even earlier. loc = 0.2, scale = 1.0 already show separable but broken patterns, with a first Rsync value over 0.05. For comparison: with 20mV lateral weights, first Rsync > 0.05 is reached at loc = 0.6, scale = 0.8. With 40mV, the interconnectivity effect quickly overpowers the noise effect. Observed patterns are more variable in length and separation intervals with low loc to high scale combinations than with higher locs. At loc = 0.5, scale = 0.6, Rsync first goes over 0.2, a comparably high value, with more stable pattern and separation interval lengths. Synchrony again subsides where patterns begin to merge. The global synchrony peak for 40mV lateral weights is recorded at loc = 0.7 and scale = 0.3, but it is notable that this global peak happens three times in total, from loc = 0.7 through loc = 0.9. With each increasing loc step the scale value for the same Rsync is one lower than for the previous. For all three global peaks synchrony subsides from the next scale value onwards, where earlier onset also correlates with earlier fading, with comparable step sizes. Here again higher synchrony correlates with increased separation interval length and shortness of patterns. This can roughly be estimated from in the visual spike patterns in the 600-800ms window: 
+
+        \end{multicols}
+
+        \begin{table}[H]
+            \centering
+            \caption{Pattern and Separation Intervals with 40 mV weights}
+    		\label{tb: Tabla1,}
+            
+            \begin{tabular}{*5l}    \toprule
+                \textbf{Gaussian Loc} & \textbf{0.7} & \textbf{0.8} & \textbf{0.9} \\\midrule
+                \textbf{Gaussian Scale} & \textbf{0.3} & \textbf{0.2} & \textbf{0.1} \\ 
+                Rsync & 0.58 & 0.58 & 0.58\\
+                Separation Intervals & \textgreater 150ms & \textgreater 150ms & \textgreater 150ms\\
+                Pattern Length & $\sim$ 5-8ms & $\sim$ 5-8ms & $\sim$ 5-8ms\\\midrule
+                \textbf{Gaussian Scale} & \textbf{0.4} & \textbf{0.3} & \textbf{0.2} \\ 
+                Rsync & 0.46 & 0.54 & 0.50\\
+                Separation Intervals & $\sim$ 15-70ms   & $\sim$ 20-75ms & $\sim$ 15-50ms\\
+                Pattern Length & $\sim$ 8ms & $\sim$ 8ms & $\sim$ 5-8ms\\\bottomrule
+                \hline
+            \end{tabular}
+    	\end{table}
+
+        \begin{multicols}{2}
+            The results in Table 1 show that a correlation of increased synchrony with shortness of patterns and separability is to be expected. So far it is inconclusive whether one of the two factors is a stronger or the main predictor. To investigate the effects of separability and pattern length, specific examples were selected that were able to compare two cases: 1) similar pattern lengths but different separability intervals (40mV weights, loc 0.7 scale 0.4, loc 0.8 scale 0.3) and 2) different pattern lengths but similar separability intervals (40mV weights, loc 0.5 scale 0.7, loc 0.8 scale 0.3). Those two comparisons showed that 1) if pattern length is similar, synchrony was observed to be higher for the more strongly separable intervals (Rsync = 0.54) than for patterns with lower separability (Rsync = 0.46). 2) showed that for similar separability intervals, shorter patterns showed higher synchrony (Rsync = 0.54) than longer patterns (Rsync = 0.25). It has to be noted that these observations are very sparse, because they were done after the experiment was run and most noise conditions did not serve to investigate this interaction without additional measures. Further experiments with more examples are necessary to confirm assumptions.
+            
+            Comparing the global peaks of the 30mV with the 40mV interconnectivity condition, for the former, the same value (Rsync =0.58) is first recorded at loc = 0.8, scale = 0.2, whereas for the latter it already appears with loc = 0.7, scale = 0.3.  While with 30mV weights this value is recorded  twice under selected noise conditions, with 40mV this value is recorded three times, most probably due to earlier onset. With increasing locs this peak is pushed to smaller  scale values, which would predict it to fall out of range from loc 1.0 onwards, after it was observed for the smallest scale value at loc = 0.9. This is indeed observed for the 30mV and 40mV interconnectivity conditions.
+            
+            While conducting the experiment I also recorded an average pattern length, however the results do not reflect visually estimated pattern lengths consistently well under different noise conditions. This is due to the experimental nature of the recording method as well as the strong variations of pattern lengths in some conditions, compared to other conditions where pattern length stays consistent. For completeness, results of the experimental pattern length measure are presented as well.
+            
+            The results of the average pattern length measure look similar for all interconnectivity conditions. For low locs and scales no patterns are recorded, which correlates with absence of spikes. With low locs but higher scales, average pattern length appears to lie between 1 and 3, which correlates with few scattered spikes not yet forming coherent patterns, because overall noise is too low for interconnections to continue activating the ensemble. With increasing locs, lower scale values can already result in spikes and thus average pattern length is recorded here as well. A trend of shorter average pattern length correlating with higher synchrony can be observed, where combinations of high locs and low scales yield best synchrony and comparably small average pattern lengths of 6 to 8ms. With increasing scales at higher locs, average pattern length increases, with values of 10 to 20ms. This trend is disrupted by some outliers, such as 18 ms at 40mV interconnectivity weights at loc =, scale =, where synchrony is very high (Rsync = 0.) These outliers where synchrony is very high and pattern length is not as short as expected, can be attributed to the experimental nature of the average pattern length measure, as well as the way the Rsync measure works. Rsync does not only take the degree of spike parallelization into account, but also separability, which can be seen in the length of between pattern intervals. Those outlier values do not have the shortest patterns, but still show high Rsync, because between patterns intervals are very long, increasing the separability effect.
+
+
+        \section{Discussion}
+        \subsection{Interpretation of Findings}
+			The present study has revealed that synchrony appears in a recurrent Spiking Neural Network with Gaussian noise input when the network receives an optimal non-zero amount of noise input. What makes those noise parameters optimal depends on the lateral connectivity of the neuron ensemble. With lateral connectivity strong enough to connect a whole network without creating gaps or subnetworks, synchrony onset is dependent on the strength of connections between neurons. For stronger interconnections the onset of synchrony appears at lower noise input and with higher overall synchrony values compared to a network with weaker interconnections.
+            
+            A general trend for the Gaussian noise parameter configuration points towards a combination of high mean and low variance. In order to achieve optimal Gaussian noise to induce synchrony, a high chance for multiple neurons to spike in parallel has to be achieved. Combinations of low mean and low variance fail to spike enough neurons, because sub-threshold behaviour stays too far away from the firing threshold, thus no spikes are elicited without external input. If the variance is increased despite low mean parameters, some neurons may be pushed close enough to the threshold, because of occasional higher noise values, but since the voltage of most neurons is still too far below the threshold, most lateral connections will not be strong enough to cause a spiking chain reaction, failing to activate the whole ensemble pattern. If instead variance is kept low but the mean is increased, the voltage of more or most neurons will closely hover below the threshold, which then makes it possible for even small variant noise inputs to push neurons over the threshold. As soon as one neuron is activated, the interconnectivity effect is strong enough to activate the whole ensemble, creating a characteristic spiking pattern representing the structure of this specific network. Depending on the mean value, the one of the lowest variance values per noise mean induces the highest synchrony, due to the activation of multiple neurons at the same time. Instead of running through the ensemble pattern from beginning to end, multiple parts of the pattern are activated at the same time, parallelizing processes. That way the time it takes to run through the whole ensemble is shortened, decreasing the overall length of the pattern, without compromising the information conveyed. Thus Gaussian noise with lower variance and higher mean values comprises the most optimal noise in order to encourage synchrony.
+            
+            When variance is increased from this optimal noise setup, synchrony slowly dissipates again, until the noise effect begins to override the interconnectivity effect. At first, Rsync values only decrease where patterns move closer together in time, due to reduced information distinction. This reduction in separation interval length is caused by an increased probability for higher than average noise values, inducing more frequent ensemble runthroughs. When variance is set even higher, synchrony disappears and randomness takes over by pushing patterns closer together in time until they merge Under such noise conditions neurons still fire simultaneously, but the amount of firings begin to overlap so much that they lose their ability to discern information, and hence the coding quality of synchrony gets lost in information overload. Singer 1999 calls this kind of issue a “superposition problem” [G].
+            
+        \subsection {Implications}
+            The findings in this study pose important implications for research on synchrony as a coding mechanism. Firstly, the induction of synchrony in a laterally connected neural network through noise shows the internal coordination capabilities of simple neural network feedback loops. It opens the possibility for synchrony as an underlying mechanism induced with or without external input. In addition, the synchrony-inducing effect of noise highlights that biological neural networks, which are exposed to high amounts of noise due to the nature of their environments, may not just reliably work in spite of, but because of said noise. The findings in this study are in line with the results of Manjarrez et al. and Pisarchik et al. [P, Q], which found that an optimal amount of non-zero noise promotes the emergence of synchrony. From that it can be assumed that the brain is capable of much richer information processing than previously predicted and that not all present noise is simply filtered out.
+            
+            Secondly, the observed shortening of patterns demonstrates the capability of spike synchrony to increase information coding efficiency by parallelizing processes. Synchrony thus has strong potential as a coding mechanism because of its high efficiency and capability to encode distributed information, as has been shown in other literatures[R, L]. It is expected to function as a complementary mechanism to rate code [L, G].
+
+            The results in this study could inspire future research to further investigate the underlying mechanism of synchrony emerging from noise. Hope for answers comes from dynamical systems theory [Y], which needs to further develop theories how the brain modelled as a dynamical system could rely on noise for the emergence of synchrony. Developing better theories about the emergence of synchrony through noise could then support the development of experiments to test whether this mechanism of noise-induced synchrony can be in biological neuronal networks.
+
+
+
+        \subsection {Limitations}
+            Because of the simplicity of this study, more research is needed on more biologically plausible models to confirm the shortening of patterns to be linked to increased synchrony. The model in this study is set to be biologically plausible as best as possible, however due to the scope of the project interconnection weights were simplified by setting a uniform weight value for each neuron in the network. In future experiments the initial weight values should be drawn from a distribution to mimic the variability in connection strengths that biological neurons display [J]. Furthermore, the network should be implemented with a learning algorithm and assigned a task, to show that this pattern shortening correlation with synchrony is not solely produced under artificial circumstances, but also appears in actual applications of the network. A good example of models studying synchrony in task application are Zemliak et al. [L] and Korndörfer et al. [M], both investigate synchrony as a measure of familiarity. This could be particularly interesting in combination with an Spike-Time-Dependent Plasticity (STDP) learning algorithm, as it utilizes a form of Hebbian learning, a mechanism where synchrony is harnessed for Long-Term Potentiation (LTP) and Long-Term Depression (LTD) [A].
+            
+            Along with applied models of synchrony, more experimental evidence needs to be gathered to prove that the efficiency of synchrony code is actually what is harnessed by biological systems. While synchrony code has previously been found in biological neural networks, it still needs to be further distinguished which functions synchrony serves compared there, to the functions shown in research models.
+            
+            A further limitation of this study poses the experimental nature of the pattern length measuring techniques. Average Pattern Length was measured in a very simplified way, capturing the time window where at least one spike was recorded across the entire network per timestep. However, it did not check whether this spike sequence was caused by an actual connectivity pattern and if exactly one full pattern was counted. Further pattern length analysis was carried out on spike train visualizations, which only allows for approximations instead of accurate measurements. Different measures to be developed to determine pattern length more precisely.
+
+
+        \section{Conclusion}
+            This study has shown that synchrony takes distributed neural signals into account and coordinates them. With increased synchrony, more signals can be processed at the same time, which results in shorter overall processing time. Furthermore, the experiment provides an example that synchrony can emerge from an optimal amount of non-zero noise without external input in a laterally connected neural network. Such optimal noise promotes the separation and compression of spike patterns, whereas less optimal noise fails to activate the whole pattern or moves patterns too closely together, where information gets lost due to overlap.
+            
+            From these results it can be assumed that synchrony is a viable coding scheme and that it can be harnessed to efficiently process information that other coding schemes struggle to interpret. This applies specifically to distributed and time-sensitive information, which loses its informative value when converted to the more commonly studied rate code. It was also presented that synchrony code is much more efficient in propagating information, because of its parallelization capabilities.
+            
+            It is to be expected that synchrony code will become increasingly important in future research, because of its multiple advantages over rate code for certain tasks. Its ability to coordinate neural networks on a multi-cell basis is a crucial research area for understanding how complex thoughts as we experience them are built from the interplay of neuronal signals.
+
+		
+		\section{Methods}
+		\subsection{Spiking Model}
+            As a spiking model the Leaky Integrate-and-Fire (LIF) model was chosen because it is the state-of-the-art model for spiking neural networks [A]. This model is inspired by electronic principles and allows taking membrane time constant, threshold and refractory period into account for the integration. It provides the advantage of simulating logarithmic external stimulus to neural output relationship, which is observed in neurons. [E]. The formula used in this paper was taken from Zemliak et al. 2025 [L]:
+            \begin{gather}\tau_{m}\frac{dV_{i}}{dt}=-(V_{i}-E_{L})+RI_{i}(t)\end{gather} where $dV$ is the membrane potential update with a step size of $dt$ in ms, with the time constant  $\tau$ in ms. $V$ concerns the current voltage of the neuron, $E_{L}$ describes the resting potential and $RI_{i}(t)$ are the incoming synaptic currents. $R$ represents a finite leak resistance of the cell membrane [L, ZN].
+            
+        \subsection{Synchrony Measure}
+            The record synchrony, i.e. the degree to which neurons fire together, Rsync was selected as a measure. The advantage of Rsync over other synchrony measures is its scalability to any high neuron population sizes. It works by averaging the population mean variance by the average individual neuron variance. Through this mechanism,  independently firing neurons push Rsync towards 0, whereas synchronous firing averages Rsync towards 1 [L]. Rsync formula was taken over from Zemliak et al. 2025 [L]: \begin{gather}R_{sync}(P, T) = \frac{\hat{\text{Var}}[\langle A_{i}(t) \rangle_{i \in P}]_{t \in T}}{\langle \hat{\text{Var}}[A_{i}(t)]_{t \in T} \rangle_{i \in P}}\end{gather} $P$ represents the encoded pattern of the neuron population and $T$ the time interval for measuring in ms. $A_{i}$ describes an activation trace of a neuron $i$ that is part of the population $P$, which are more similar with higher synchrony, and would all be identical with perfect synchrony [L].
+            
+        \subsection{Average Spike Pattern Length}
+            Average Spike Pattern Length is an experimental measure developed in this paper with the intention to make pattern length analysis comparable. For this method the total spike count across the whole neuron population was taken and each timestep with at least of spike count was recorded as part of the pattern. Each coherent sequence of timesteps with at least one spike was counted together as one pattern and the amount of timesteps, i.e. the pattern length was recorded. Any amount of empty timesteps were defined as between pattern intervals but were not recorded in length. Of the recorded pattern lengths per experimental run a mean was taken, which yielded the Average Pattern Length Value. The choice to even count a singular spike as part of a pattern instead of selecting a threshold of at least a few multiple firings was made because it was expected for even one spike to have value in the pattern. Due to the strong interconnectivity of the network, it was expected that most singular spikes will activate further neurons in the next step, so they are more likely to be informative than not. It has to be noted that this measure is very limited in its informative value, because depending on the noise and interconnectivity condition, pattern length was more similar or more variable. It served to point to a trend, but to ensure detailed and robust results, visual pattern analysis was considered more informative over the Average Pattern Length Value.
+
+        \subsection{Model Connectivity}
+            To fit the scope of the experiment a laterally connected 50 neuron network was set up with a 5\% connectivity value, which translates to each individual neuron in the network being connected to \~5\% of other neurons. The connectivity was set up semi-random, with a random draw of connections but a rule for upper limit of incoming connections, in order to make sure the network stayed relatively balanced. The weights of the network were set to a uniform value for the whole network with different global weight values for different interconnectivity conditions. The network shown in Figure x was used for all experimental runs.
+
+            \begin{figure*}[t]
+                \centering
+                \includegraphics[width=0.5\textwidth]{model_connectivity.jpg}
+                \caption{Laterally Connected 50 Neuron Network}
+                \label{fig:label}
+            \end{figure*}
+    
+    \section {Code Availability}
+        The code of the experiment and the experimental plots are available at https://github.com/Mini11e/spiky\_project.git .
+    
+    \section{Declaration of AI Use}
+        AI was explicitly not used for writing in any circumstance, unless unknowingly in the background inside of browser applications for synonym and word search. For Google searches the AI assistant answers were occasionally taken as general input, but never used as a credible source for any content written in this paper. For some LaTeX code issues, AI was harnessed to debug or adapt code to improve formatting. In the beginning of the building process for the experiment code, AI was used once to create a small and simplistic model to gain an overview of what the model may be structured like. This model was completely discarded from the actual experiment, but the file can still be found in the codebase under /model\_first\_version\_AI.
+
+    \section {Acknowledgements}
+        dsöajf
+
+    
+    \printbibliography
+    \end{multicols}
+
+
+    \newpage
+    \tableofcontents
+	
+    
+\end{document}
+
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{image-name}
+    \caption{Caption text}
+    \label{fig:label}
+\end{figure}
