@@ -3137,4 +3137,98 @@
     <bcf:citekey order="41" intorder="2">AC</bcf:citekey>
     <bcf:citekey order="42" intorder="1">A</bcf:citekey>
     <bcf:citekey order="42" intorder="2">AD</bcf:citekey>
-    <bcf:citekey order="4
+    <bcf:citekey order="43" intorder="1">A</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">E</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">M</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">F</bcf:citekey>
+    <bcf:citekey order="46" intorder="2">M</bcf:citekey>
+    <bcf:citekey order="46" intorder="3">O</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">S</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">J</bcf:citekey>
+    <bcf:citekey order="50" intorder="2">Q</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">S</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">AE</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">S</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">O</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">F</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">F</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">AF</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">O</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">F</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">AG</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">AG</bcf:citekey>
+    <bcf:citekey order="62" intorder="2">AH</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">G</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">P</bcf:citekey>
+    <bcf:citekey order="64" intorder="2">Q</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">R</bcf:citekey>
+    <bcf:citekey order="65" intorder="2">L</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="66" intorder="2">G</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">Y</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">J</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">M</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">A</bcf:citekey>
+    <bcf:citekey order="71" intorder="2">L</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">A</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">E</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="74" intorder="2">ZN</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">L</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">L</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="nyt">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nyt/apasortcite//global/global/global"
+                type="entry"
+                sortingtemplatename="nyt"
+                sortingnamekeytemplatename="apasortcite"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
+  <bcf:datalist section="0"
+                name="nyt/global//global/global/global"
+                type="entry"
+                sortingtemplatename="nyt"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>

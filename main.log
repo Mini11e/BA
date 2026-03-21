@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  20 MAR 2026 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  21 MAR 2026 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,6 +430,9 @@ Package caption Info: hyperref package is loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty
 Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
 )
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen174
@@ -741,29 +744,31 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-Package hyperref Info: Link coloring OFF on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+Package hyperref Info: Link coloring OFF on input line 53.
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count447
 \scratchdimen=\dimen195
@@ -820,11 +825,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
+Package biblatex Info: ... file 'main.bbl' found.
 
-No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 52.
-Package biblatex Info: Reference segment=0 on input line 52.
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 53.
+Package biblatex Info: Reference segment=0 on input line 53.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -859,117 +865,260 @@ Package biblatex Info: Reference segment=0 on input line 52.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<osna_uni.png, id=4, 200.75pt x 65.24374pt>
+<osna_uni.png, id=188, 200.75pt x 65.24374pt>
 File: osna_uni.png Graphic file (type png)
 <use osna_uni.png>
-Package pdftex.def Info: osna_uni.png  used on input line 56.
+Package pdftex.def Info: osna_uni.png  used on input line 57.
 (pdftex.def)             Requested size: 100.37474pt x 32.62178pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./osna_uni.png>] [2] [3] [
+4]
+Underfull \hbox (badness 5431) in paragraph at lines 132--133
+\OT1/cmr/m/n/12 Working with only one re-cur-rent layer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+\OT1/cmr/m/n/12 a sin-gu-lar con-nec-tiv-ity ma-trix of
+ []
+
+[5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 190--190
+[]\OT1/cmr/bx/n/12 Gaussian Stan-dard De-vi-a-tion
+ []
+
+[9]
+<connectivity_network.png, id=364, 1316.7594pt x 359.9046pt>
+File: connectivity_network.png Graphic file (type png)
+<use connectivity_network.png>
+Package pdftex.def Info: connectivity_network.png  used on input line 203.
+(pdftex.def)             Requested size: 483.69687pt x 132.20706pt.
+ [10]
+<voltage_noise_only.png, id=372, 685.1196pt x 360.6273pt>
+File: voltage_noise_only.png Graphic file (type png)
+<use voltage_noise_only.png>
+Package pdftex.def Info: voltage_noise_only.png  used on input line 248.
+(pdftex.def)             Requested size: 386.95897pt x 203.68877pt.
+ [11 <./connectivity_network.png>] [12{/usr/share/texlive/texmf-dist/fonts/enc/
+dvips/cm-super/cm-super-ts1.enc} <./voltage_noise_only.png>]
+<few_spikes_weights20_loc0.20_scale1.00.png, id=394, 650.43pt x 361.35pt>
+File: few_spikes_weights20_loc0.20_scale1.00.png Graphic file (type png)
+<use few_spikes_weights20_loc0.20_scale1.00.png>
+Package pdftex.def Info: few_spikes_weights20_loc0.20_scale1.00.png  used on in
+put line 281.
+(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
+<broken_patterns_weights20_loc0.60_scale0.70.png, id=395, 650.43pt x 361.35pt>
+File: broken_patterns_weights20_loc0.60_scale0.70.png Graphic file (type png)
+<use broken_patterns_weights20_loc0.60_scale0.70.png>
+Package pdftex.def Info: broken_patterns_weights20_loc0.60_scale0.70.png  used 
+on input line 283.
+(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
+<patterns_weights20_loc0.80_scale0.30.png, id=396, 650.43pt x 361.35pt>
+File: patterns_weights20_loc0.80_scale0.30.png Graphic file (type png)
+<use patterns_weights20_loc0.80_scale0.30.png>
+Package pdftex.def Info: patterns_weights20_loc0.80_scale0.30.png  used on inpu
+t line 285.
+(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
+<merged_patterns_weights20_loc0.80_scale0.40.png, id=397, 650.43pt x 361.35pt>
+File: merged_patterns_weights20_loc0.80_scale0.40.png Graphic file (type png)
+<use merged_patterns_weights20_loc0.80_scale0.40.png>
+Package pdftex.def Info: merged_patterns_weights20_loc0.80_scale0.40.png  used 
+on input line 287.
+(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 288.
+See the caption package documentation for explanation.
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 2
+94.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 294.
+ [13 <./few_spikes_weights20_loc0.20_scale1.00.png> <./broken_patterns_weights2
+0_loc0.60_scale0.70.png> <./patterns_weights20_loc0.80_scale0.30.png> <./merged
+_patterns_weights20_loc0.80_scale0.40.png>]
+<all_syncs.png, id=408, 1141.1433pt x 380.8629pt>
+File: all_syncs.png Graphic file (type png)
+<use all_syncs.png>
+Package pdftex.def Info: all_syncs.png  used on input line 302.
+(pdftex.def)             Requested size: 483.69687pt x 161.43744pt.
 
-LaTeX Warning: Citation 'U' on page 1 undefined on input line 90.
 
+! LaTeX Error: Command \textgeq unavailable in encoding OT1.
 
-LaTeX Warning: Citation 'T' on page 1 undefined on input line 90.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.309 ...be observed for loc = 0.3, scale \textgeq
+                                                   1.0 and loc = 0.4, scale ...
 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-LaTeX Warning: Citation 'R' on page 1 undefined on input line 90.
 
+! LaTeX Error: Command \textgeq unavailable in encoding OT1.
 
-LaTeX Warning: Citation 'X' on page 1 undefined on input line 90.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.309 ...textgeq 1.0 and loc = 0.4, scale \textgeq
+                                                   0.9. For locs \textgeq 0....
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \textgeq unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.309 ....4, scale \textgeq 0.9. For locs \textgeq
+                                                   0.5, synchrony appers at ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[14] [15 <./all_syncs.png>] [16] [17] [18]
+<model_connectivity.jpg, id=452, 462.528pt x 346.896pt>
+File: model_connectivity.jpg Graphic file (type jpg)
+<use model_connectivity.jpg>
+Package pdftex.def Info: model_connectivity.jpg  used on input line 392.
+(pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+[]\OT1/cmr/bx/n/14.4 Average Spike Pat-tern
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\OT1/cmr/m/n/12 The code of the ex-per-i-ment and the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\OT1/cmr/m/n/12 ex-per-i-men-tal plots are avail-able at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+\OT1/cmr/m/n/12 https://github.com/Mini11e/spiky[]project.git
+ []
+
+! Undefined control sequence.
+l.409 ...ill be found in the codebase under \model
+                                                  \_first\_version\_AI.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[20 <./model_connectivity.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+[][]\OT1/cmr/m/n/12 Dampfhoffer, M., Mesquida, T.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmr/m/n/12 Backpropagation-based learn-ing tech-
+ []
+
+
+Package biblatex Warning: No driver for 'preprint'.
+(biblatex)                Using fallback driver on input line 415.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+[][]\OT1/cmr/m/n/12 Manjarrez, E., Rojas-Piloni, G.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
+\OT1/cmr/m/n/12 M^^Sendez-Balbuena, I., Mart^^S^^Pnez-Silva,
+ []
+
+[21]
+
+Package biblatex Warning: No driver for 'preprint'.
+(biblatex)                Using fallback driver on input line 415.
+
+[22] (./main.toc [23])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [24]
+<heatmaps_20mv.png, id=571, 867.24pt x 722.7pt>
+File: heatmaps_20mv.png Graphic file (type png)
+<use heatmaps_20mv.png>
+Package pdftex.def Info: heatmaps_20mv.png  used on input line 428.
+(pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
+<heatmaps_30mv.png, id=572, 867.24pt x 722.7pt>
+File: heatmaps_30mv.png Graphic file (type png)
+<use heatmaps_30mv.png>
+Package pdftex.def Info: heatmaps_30mv.png  used on input line 435.
+(pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
+ [25 <./heatmaps_20mv.png>]
+<heatmaps_40mv.png, id=580, 867.24pt x 722.7pt>
+File: heatmaps_40mv.png Graphic file (type png)
+<use heatmaps_40mv.png>
+Package pdftex.def Info: heatmaps_40mv.png  used on input line 442.
+(pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
+ [26 <./heatmaps_30mv.png>] [27 <./heatmaps_40mv.png>] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: B8E467083DAF84B6343DEE3627C12DDF;6453.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 22272 strings out of 476041
+ 397311 string characters out of 5793174
+ 1878388 words of memory out of 6000000
+ 42324 multiletter control sequences out of 15000+600000
+ 522212 words of font info for 70 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 75i,13n,77p,2399b,5044s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+tt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
+b>
+Output written on main.pdf (27 pages, 2728640 bytes).
+PDF statistics:
+ 674 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 429 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-
-LaTeX Warning: Citation 'R' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'L' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'X' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'M' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'L' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'G' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation 'G' on page 1 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'G' on page 1 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'R' on page 1 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'R' on page 1 undefined on input line 92.
-
-
-LaTeX Warning: Citation 'L' on page 1 undefined on input line 92.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./osna_uni.png>]
-
-LaTeX Warning: Citation 'R' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'Z' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'R' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'G' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'G' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'Z' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'L' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation 'L' on page 2 undefined on input line 96.
-
-
-LaTeX Warning: Citation 'G' on page 2 undefined on input line 96.
-
-
-LaTeX Warning: Citation 'R' on page 2 undefined on input line 96.
-
-
-LaTeX Warning: Citation 'O' on page 2 undefined on input line 98.
-
-
-LaTeX Warning: Citation 'H' on page 2 undefined on input line 98.
-
-
-LaTeX Warning: Citation 'A' on page 2 undefined on input line 98.
-
-
-LaTeX Warning: Citation 'Q' on page 2 undefined on input line 100.
-
-
-LaTeX Warning: Citation 'Q' on page 2 undefined on input line 100.
-
-
-LaTeX Warning: Citation 'P' on page 2 undefined on input line 100.
-
-
-LaTeX Warning: Citation 'O' on page 2 undefined on input lin
