@@ -31,6 +31,7 @@
 \contentsline {subsection}{\numberline {8.1}Voltage Analysis}{11}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Spike Pattern Analysis}{12}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Synchrony Analysis}{13}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Average Pattern Length Analysis}{16}{subsection.8.4}%
 \contentsline {section}{\numberline {9}Discussion}{16}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Interpretation of Findings}{16}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Implications}{17}{subsection.9.2}%
@@ -43,5 +44,5 @@
 \contentsline {subsection}{\numberline {11.4}Model Connectivity}{20}{subsection.11.4}%
 \contentsline {section}{\numberline {12}Code Availability}{20}{section.12}%
 \contentsline {section}{\numberline {13}Declaration of AI Use}{20}{section.13}%
-\contentsline {section}{\numberline {14}Acknowledgements}{21}{section.14}%
+\contentsline {section}{\numberline {14}Acknowledgements}{20}{section.14}%
 \contentsline {section}{\numberline {15}Appendix}{25}{section.15}%
