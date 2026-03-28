@@ -26,12 +26,12 @@
 \contentsline {subsection}{\numberline {6.1}Noise Range}{9}{subsection.6.1}%
 \contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{9}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Gaussian Standard Deviation (SD)}{9}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Network Connectivity}{9}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Network Connectivity}{10}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Global Connectivity Percentage}{10}{subsubsection.6.2.1}%
 \contentsline {subsubsection}{\numberline {6.2.2}Uniform Connectivity Weigths}{10}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Overview}{10}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3}Overview}{11}{subsubsection.6.2.3}%
 \contentsline {section}{\numberline {7}Predictions}{11}{section.7}%
-\contentsline {section}{\numberline {8}Results}{11}{section.8}%
+\contentsline {section}{\numberline {8}Results}{12}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Voltage Analysis}{12}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Spike Pattern Analysis}{12}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Synchrony Analysis}{13}{subsection.8.3}%
