@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  30 MAR 2026 09:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  30 MAR 2026 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,18 +890,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 106--106
 []\OT1/cmr/bx/n/14.4 Synchrony in Dy-nam-i-cal
  []
 
-[2] [3] [4] [5] [6] [7] [8]
+[3] [4]
+
+LaTeX Warning: Citation 'AI' on page 5 undefined on input line 144.
+
+[5] [6] [7] [8]
 Underfull \hbox (badness 10000) in paragraph at lines 214--214
 []\OT1/cmr/bx/n/12 Gaussian Stan-dard De-vi-a-tion
  []
 
 [9]
-<connectivity_network.png, id=408, 1316.7594pt x 359.9046pt>
+<connectivity_network.png, id=409, 1316.7594pt x 359.9046pt>
 File: connectivity_network.png Graphic file (type png)
 <use connectivity_network.png>
 Package pdftex.def Info: connectivity_network.png  used on input line 230.
@@ -910,106 +914,87 @@ Package pdftex.def Info: connectivity_network.png  used on input line 230.
 <voltage_noise_only.png, id=436, 685.1196pt x 360.6273pt>
 File: voltage_noise_only.png Graphic file (type png)
 <use voltage_noise_only.png>
-Package pdftex.def Info: voltage_noise_only.png  used on input line 280.
+Package pdftex.def Info: voltage_noise_only.png  used on input line 273.
 (pdftex.def)             Requested size: 386.95897pt x 203.68877pt.
  [11 <./connectivity_network.png>] [12 <./voltage_noise_only.png>]
-<few_spikes_weights20_loc0.20_scale1.00.png, id=463, 650.43pt x 361.35pt>
-File: few_spikes_weights20_loc0.20_scale1.00.png Graphic file (type png)
-<use few_spikes_weights20_loc0.20_scale1.00.png>
-Package pdftex.def Info: few_spikes_weights20_loc0.20_scale1.00.png  used on in
-put line 310.
-(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
-<broken_patterns_weights20_loc0.60_scale0.70.png, id=464, 650.43pt x 361.35pt>
-File: broken_patterns_weights20_loc0.60_scale0.70.png Graphic file (type png)
-<use broken_patterns_weights20_loc0.60_scale0.70.png>
-Package pdftex.def Info: broken_patterns_weights20_loc0.60_scale0.70.png  used 
-on input line 312.
-(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
-<patterns_weights20_loc0.80_scale0.30.png, id=465, 650.43pt x 361.35pt>
-File: patterns_weights20_loc0.80_scale0.30.png Graphic file (type png)
-<use patterns_weights20_loc0.80_scale0.30.png>
-Package pdftex.def Info: patterns_weights20_loc0.80_scale0.30.png  used on inpu
-t line 314.
-(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
-<merged_patterns_weights20_loc0.80_scale0.40.png, id=466, 650.43pt x 361.35pt>
-File: merged_patterns_weights20_loc0.80_scale0.40.png Graphic file (type png)
-<use merged_patterns_weights20_loc0.80_scale0.40.png>
-Package pdftex.def Info: merged_patterns_weights20_loc0.80_scale0.40.png  used 
-on input line 316.
-(pdftex.def)             Requested size: 236.84843pt x 131.58012pt.
+<few_spikes_0.2_1.0_20mv.png, id=461, 715.473pt x 375.804pt>
+File: few_spikes_0.2_1.0_20mv.png Graphic file (type png)
+<use few_spikes_0.2_1.0_20mv.png>
+Package pdftex.def Info: few_spikes_0.2_1.0_20mv.png  used on input line 303.
+(pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
+<broken_patterns_0.6_0.7_20mv.png, id=462, 715.473pt x 375.804pt>
+File: broken_patterns_0.6_0.7_20mv.png Graphic file (type png)
+<use broken_patterns_0.6_0.7_20mv.png>
+Package pdftex.def Info: broken_patterns_0.6_0.7_20mv.png  used on input line 3
+05.
+(pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
+<patterns_0.8_0.3_20mv.png, id=463, 715.473pt x 375.804pt>
+File: patterns_0.8_0.3_20mv.png Graphic file (type png)
+<use patterns_0.8_0.3_20mv.png>
+Package pdftex.def Info: patterns_0.8_0.3_20mv.png  used on input line 307.
+(pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
+<merged_patterns_0.8_0.5_20mv.png, id=464, 715.473pt x 375.804pt>
+File: merged_patterns_0.8_0.5_20mv.png Graphic file (type png)
+<use merged_patterns_0.8_0.5_20mv.png>
+Package pdftex.def Info: merged_patterns_0.8_0.5_20mv.png  used on input line 3
+09.
+(pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 317.
+(caption)                particular \caption on input line 310.
 See the caption package documentation for explanation.
 
-[13{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<all_syncs.png, id=476, 1141.1433pt x 380.8629pt>
+<short_spikes_loc0.9_scale0.1_0.4_20mv.png, id=465, 715.473pt x 375.804pt>
+File: short_spikes_loc0.9_scale0.1_0.4_20mv.png Graphic file (type png)
+<use short_spikes_loc0.9_scale0.1_0.4_20mv.png>
+Package pdftex.def Info: short_spikes_loc0.9_scale0.1_0.4_20mv.png  used on inp
+ut line 318.
+(pdftex.def)             Requested size: 483.69687pt x 254.05815pt.
+[13{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <.
+/few_spikes_0.2_1.0_20mv.png> <./broken_patterns_0.6_0.7_20mv.png> <./patterns_
+0.8_0.3_20mv.png> <./merged_patterns_0.8_0.5_20mv.png>] [14 <./short_spikes_loc
+0.9_scale0.1_0.4_20mv.png>]
+<all_syncs.png, id=488, 1141.1433pt x 380.8629pt>
 File: all_syncs.png Graphic file (type png)
 <use all_syncs.png>
-Package pdftex.def Info: all_syncs.png  used on input line 331.
+Package pdftex.def Info: all_syncs.png  used on input line 337.
 (pdftex.def)             Requested size: 483.69687pt x 161.43744pt.
-
-
-! LaTeX Error: Command \textgeq unavailable in encoding OT1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.338 ...be observed for loc = 0.3, scale \textgeq
-                                                   1.0 and loc = 0.4, scale ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \textgeq unavailable in encoding OT1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.338 ...textgeq 1.0 and loc = 0.4, scale \textgeq
-                                                   0.9. For locs \ensuremath...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-38.
+44.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 338.
- [14 <./few_spikes_weights20_loc0.20_scale1.00.png> <./broken_patterns_weights2
-0_loc0.60_scale0.70.png> <./patterns_weights20_loc0.80_scale0.30.png> <./merged
-_patterns_weights20_loc0.80_scale0.40.png>] [15 <./all_syncs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 344.
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 \OT1/cmr/m/n/12 pat-terns showed higher syn-chrony
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--380
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./all_syncs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
 []\OT1/cmr/bx/n/14.4 Average Pat-tern Length
  []
 
-[16] [17] [18] [19]
-<model_connectivity.jpg, id=538, 462.528pt x 346.896pt>
+[17] [18] [19]
+<model_connectivity.jpg, id=541, 462.528pt x 346.896pt>
 File: model_connectivity.jpg Graphic file (type jpg)
 <use model_connectivity.jpg>
-Package pdftex.def Info: model_connectivity.jpg  used on input line 432.
+Package pdftex.def Info: model_connectivity.jpg  used on input line 436.
 (pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--437
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
 []\OT1/cmr/bx/n/14.4 Average Spike Pat-tern
  []
 
+[20]
 ! Undefined control sequence.
-l.449 ...ill be found in the codebase under \model
+l.453 ...ill be found in the codebase under \model
                                                   \_first\_version\_AI.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1017,55 +1002,56 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 [][]\OT1/cmr/m/n/12 Dampfhoffer, M., Mesquida, T.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \OT1/cmr/m/n/12 Backpropagation-based learn-ing tech-
  []
 
+[21 <./model_connectivity.jpg>]
 
 Package biblatex Warning: No driver for 'preprint'.
-(biblatex)                Using fallback driver on input line 455.
+(biblatex)                Using fallback driver on input line 459.
 
-[21 <./model_connectivity.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 [][]\OT1/cmr/m/n/12 Manjarrez, E., Rojas-Piloni, G.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \OT1/cmr/m/n/12 M^^Sendez-Balbuena, I., Mart^^S^^Pnez-Silva,
  []
 
 [22]
 
 Package biblatex Warning: No driver for 'preprint'.
-(biblatex)                Using fallback driver on input line 455.
+(biblatex)                Using fallback driver on input line 459.
 
 [23] (./main.toc [24])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
  [25]
-<heatmaps_20mv.png, id=664, 867.24pt x 722.7pt>
+<heatmaps_20mv.png, id=669, 867.24pt x 722.7pt>
 File: heatmaps_20mv.png Graphic file (type png)
 <use heatmaps_20mv.png>
-Package pdftex.def Info: heatmaps_20mv.png  used on input line 468.
+Package pdftex.def Info: heatmaps_20mv.png  used on input line 472.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
-<heatmaps_30mv.png, id=665, 867.24pt x 722.7pt>
+<heatmaps_30mv.png, id=670, 867.24pt x 722.7pt>
 File: heatmaps_30mv.png Graphic file (type png)
 <use heatmaps_30mv.png>
-Package pdftex.def Info: heatmaps_30mv.png  used on input line 475.
+Package pdftex.def Info: heatmaps_30mv.png  used on input line 479.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
  [26 <./heatmaps_20mv.png>]
-<heatmaps_40mv.png, id=672, 867.24pt x 722.7pt>
+<heatmaps_40mv.png, id=677, 867.24pt x 722.7pt>
 File: heatmaps_40mv.png Graphic file (type png)
 <use heatmaps_40mv.png>
-Package pdftex.def Info: heatmaps_40mv.png  used on input line 482.
+Package pdftex.def Info: heatmaps_40mv.png  used on input line 486.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
  [27 <./heatmaps_30mv.png>] [28 <./heatmaps_40mv.png>] (./main.aux)
 
@@ -1086,13 +1072,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22698 strings out of 476041
- 404134 string characters out of 5793174
- 1874388 words of memory out of 6000000
- 42712 multiletter control sequences out of 15000+600000
+ 22703 strings out of 476041
+ 404023 string characters out of 5793174
+ 1876388 words of memory out of 6000000
+ 42715 multiletter control sequences out of 15000+600000
  522897 words of font info for 73 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 75i,13n,77p,1943b,5044s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,77p,2026b,5044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -1105,10 +1091,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (28 pages, 2732329 bytes).
+Output written on main.pdf (28 pages, 2857347 bytes).
 PDF statistics:
- 777 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 157 named destinations out of 1000 (max. 500000)
- 464 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 782 PDF objects out of 1000 (max. 8388607)
+ 696 compressed objects within 7 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 469 words of extra memory for PDF output out of 10000 (max. 10000000)
 
