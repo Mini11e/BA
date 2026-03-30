@@ -138,7 +138,8 @@
     
 		\section{The Model}
         \subsection{Layer Setup and Recurrency}
-			To examine how sub-threshold noise induces and affects synchrony, a spiking neural network (SNN) model was set up with a single recurrent layer. Recurrent layers as well as spiking neurons are not the standard procedure in current Artificial Neural Network (ANN) research, which SNNs are a sub-type of \cite{AA, AB}. Many ANN architectures rely on non-recurrent feedforward layers and the majority of artificial neurons utilize differentiable activation functions at their synapses, which allows for backpropagation \cite{A}. Recurrent ANN layers are commonly used for sequential learning that integrate past input into the next step, however randomly interconnected singular layers as used in this model are uncommon. The recurrent layer in this model mimics a very simple patch of lateral connections with a certain connectivity probability, which is a structure shown to facilitate synchrony. The mechanism enabling synchrony in such networks is a recurring communication among neurons, leading to a self-organized adaptation to each other’s patterns through cross-activation \cite{L, AC}. The choice of one singular layer over multiple connected recurrent layers, as would be more biologically plausible, was made to keep results and evaluation simplistic and to reduce computational load to a minimum.
+			To examine how sub-threshold noise induces and affects synchrony, a spiking neural network (SNN) model was set up with a single recurrent layer. Recurrent layers as well as spiking neurons are not the standard procedure in current Artificial Neural Network (ANN) research, which SNNs are a sub-type of \cite{AA, AB}. Many ANN architectures rely on non-recurrent feedforward layers and the majority of artificial neurons utilize differentiable activation functions at their synapses, which allows for backpropagation \cite{A}. Recurrent ANN layers are commonly used for sequential learning that integrate past input into the next step, however, randomly interconnected singular layers as in this model are uncommon. The recurrent layer in this model mimics a very simple patch of lateral connections with a certain connectivity probability, which is a structure shown to facilitate synchrony. The mechanism enabling synchrony in such networks is a recurring communication among neurons, leading to a self-organized adaptation to each other’s patterns through cross-activation \cite{L, AC}. The choice of one singular layer over multiple connected recurrent layers, as would be more biologically plausible, was made to keep results and evaluation simplistic and to reduce computational load to a minimum.
+            The purpose of the experiment was to only examine the emergence of synchrony and the pattern formations solely caused by noise. In order to study the noise effect isolated from other input current factors, the network was neither equipped with a learning algorithm and nor did it receive a task.
             
         \subsection{The Artificial Neuron}           
             Neurons with differentiable activation functions have mathematical advantages: due to their comparably simple derivatives, backpropagation using gradient descent, which is the current dominating learning algorithm for ANNs, can easily be implemented \cite{A, AD}. Spiking neural networks use a different type of integration at the synapse, where inputs sum up as binary input weights and create binary outputs. This makes backpropagation more analytically challenging \cite{AI}. The binary outputs of spiking artificial neurons reflect more closely, but not completely, how biological neurons integrate. Very simply put, they communicate with the generation of a spike or no spike resulting from spike inputs. In biological neurons this is mediated by another complex, partially continuous process \cite{A}, but in SNNs a simpler mathematical formula is used. Neuronal integration in this paper was computed with the Leaky-Integrate-and-Fire (LIF) neuron (see Section ~\ref{sec:LIF}), a simple analytical application of membrane time constant, firing threshold and refractory period, on an abstract level similar to the mechanism observed in biological neurons \cite{E}.
@@ -158,7 +159,16 @@
             In the integration step of the code, the voltage is updated per neuron and time step by the LIF calculation. The formula takes input currents and noise of the previous time step and calculates a membrane voltage update. The function then checks for the refractory period, where for all cases that are not in refractory, membrane voltage is compared to the threshold voltage and then updated. In the case that the neuron spiked after the voltage update, the last step is to reset the membrane voltage to the resting potential. Each of these steps is performed along the full neuron vector for one time step in at the same time, because vector calculations are highly computationally efficient compared to loops. Code from \textcite{L} was used as a template to build this structure and adapted according to the simplified experimental use case. In the LIF formula (see Section ~\ref{sec:LIF}), voltage calculations modified by input currents are divided by the product of delta time and membrane time constant. Delta time represents the step size operated on, here set to 1 ms steps for simplicity. Analytically, the membrane time constant is the product of membrane capacitance and membrane resistance, which describes the rate at which the membrane rises or falls in biological neurons. The membrane time constant was set to 10, which lies within the biological range \cite{S}.
             
         \subsection{Simulation}
-            The \textit{simulate} function takes care of running through each time step of the spiking neural network simulation. Voltage and spikes are recorded in separate matrices after each integration time step. The integration function inside the time steps loop is fed by wih a matrix of external and lateral input currents combined by a dot product. External input represents potential input streams from outside the networks, which was set to zero in the final experiment of this paper. Lateral input stems from the directed neuron connections inside the network. THese inputs are zero for connections where preceding neurons did not fire in the previous time step and larger than zero for connections where preceding neurons did fire. Noise is added inside the integration function instead of combined into the input current matrix. Again, code from \textcite{L} was used as a template to build this structure and adapted according to the simplified experimental use case. In this paper another voltage matrix was added, solely for visualization purposes. Voltage was recorded twice per time step, once at the point where input currents have recently changed the voltage, and once after a potential spike. In the case of a spike this leads to two different voltage recordings, as the voltage is reset after the spike. Without this double recording the voltage increase right before a spike would be missing from visualizations.
+            The \textit{simulate} function takes care of running through each time step of the spiking neural network simulation. Voltage and spikes are recorded in separate matrices after each integration time step. The integration function inside the time steps loop is fed by wih a matrix of external and lateral input currents combined by a dot product. External input represents potential input streams from outside the networks, which was set to zero in the final experiment of this paper. Lateral input stems from the directed neuron connections inside the network. These inputs are zero for connections where preceding neurons did not fire in the previous time step and larger than zero for connections where preceding neurons did fire. Noise is added inside the integration function instead of combined into the input current matrix (see Figure ~\ref{diagram}).
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=\linewidth]{layer_diagram.png}
+                \caption{Flow Chart of the Recurrent Layer with the Leaky Integrate-and-Fire Neuron}
+                \label{diagram}
+            \end{figure}
+            
+            Again, code from \textcite{L} was used as a template to build this structure and adapted according to the simplified experimental use case. In this paper another voltage matrix was added, solely for visualization purposes. Voltage was recorded twice per time step, once at the point where input currents have recently changed the voltage, and once after a potential spike. In the case of a spike this leads to two different voltage recordings, as the voltage is reset after the spike. Without this double recording the voltage increase right before a spike would be missing from visualizations.
             
         \section{Hyperparameter Setup}
         \subsection{Resting Potential and Firing Threshold}
@@ -295,8 +305,6 @@
             
             For low means and increasing SDs, first few spikes appear that are scattered across neurons (see Figure ~\ref{spikes_patterns}a). Such spiking behavior does not lead to patterns, because spikes are too sparse. Sparseness despite strong interconnectivity is caused by overall low noise, which is unable to push voltages towards the threshold. Some neurons may receive higher noise input and spike, however neurons that receive this spike as input are still likely to stay below the threshold, because their voltage is still too low to spike. Thus the ensemble breaks down after one or few spikes, preventing full patterns from being carried through. This results in most parts of the ensemble to neither be triggered by interconnectivity, nor by the noise. As to be expected this effect varies between interconnectivity conditions: For the same noise conditions, higher interconnectivity values result in a longer spike chain. This results from a higher chance for following ensemble components to be pushed over the threshold due to higher combined input (noise + weights).
 
-            For low means and increasing SDs, patterns begin to emerge visually. At first these patterns appear partially broken and not periodic, spikes still look more scattered than ordered (Figure ~\ref{spikes_patterns}b). Transitions between \textit{no spikes \textrightarrow\ few spikes \textrightarrow\ broken patterns \textrightarrow\ periodic patterns} shift depending on the noise configuration as well as the interconnectivity weights. Especially with smaller interconnectivity weights, even for increasing means and arbitrary SD values separated patterns do not emerge. For interconnectivity weights of 20mV the first clearly distinguishable pattern appears with a mean = 0.7 or mean = 0.8 (Figure ~\ref{spikes_patterns}c),  while for an interconnectivity weight value of 40mV patterns are distinguishable for the first time at mean = 0.3. Clear patterns appear when the interconnectivity effect outweighs the noise effect. For higher interconnectivity weights, patterns are more quickly separated, because the chance for all neurons in the ensemble to be activated is higher even at lower noise amplitudes. For example, the assembly with a 40mV weight per connection essentially gets double as much interconnectivity voltage input as the assembly with 20mV connection weights. Thus connected neurons are much more likely to fire after their preceding connections have fired, even with lower sub-threshold activity.
-
             \noindent
             \begin{minipage}{\linewidth}
                 \centering
@@ -319,18 +327,10 @@
                 \caption{Visual Comparison of Spike Pattern Length in a Network with 20 mV Lateral Weights}
                 \label{short_pattern}
             \end{figure*}
+
+            For low means and increasing SDs, patterns begin to emerge visually. At first these patterns appear partially broken and not periodic, spikes still look more scattered than ordered (Figure ~\ref{spikes_patterns}b). Transitions between \textit{no spikes \textrightarrow\ few spikes \textrightarrow\ broken patterns \textrightarrow\ periodic patterns} shift depending on the noise configuration as well as the interconnectivity weights. Especially with smaller interconnectivity weights, even for increasing means and arbitrary SD values separated patterns do not emerge. For interconnectivity weights of 20mV the first clearly distinguishable pattern appears with a mean = 0.7 or mean = 0.8 (Figure ~\ref{spikes_patterns}c),  while for an interconnectivity weight value of 40mV patterns are distinguishable for the first time at mean = 0.3. Clear patterns appear when the interconnectivity effect outweighs the noise effect. For higher interconnectivity weights, patterns are more quickly separated, because the chance for all neurons in the ensemble to be activated is higher even at lower noise amplitudes. For example, the assembly with a 40mV weight per connection essentially gets double as much interconnectivity voltage input as the assembly with 20mV connection weights. Thus connected neurons are much more likely to fire after their preceding connections have fired, even with lower sub-threshold activity.
             
             Further observations can be made about the distance of patterns once they emerge. For certain noise and connectivity configurations, patterns appear clearly separated. For 20mV interconnectivity, the first clearly separated full pattern appears at mean = 0.8 and SD = 0.2. This interconnectivity condition already shows emergence of patterns at lower means but those do not appear clearly separated and potentially incomplete (Figure ~\ref{spikes_patterns}b). Once patterns have reached a mean value where they appear clearly separated, with increasing SD they then begin to move closer together until they appear to overlap (Figure ~\ref{spikes_patterns}d). For clearly separated patterns it appears that the higher the mean, the shorter the pattern length. These observations can be made about all interconnectivity conditions, but the onset of clearly separable patterns occurs with different noise configurations. The higher the interconnectivity weight, the earlier the onset of clearly separable patterns. For the connectivity conditions it is visually indistinguishable whether pattern size changes with increasing SD but consistent mean.
-            
-            
-        \subsection {Synchrony Analysis}
-            Next, spike behavior and synchrony were put into context: For this, spike plots were visually analyzed in the 600-800 ms window and related to the corresponding Rsync values (see Figure ~\ref{all_syncs}). For all interconnectivity conditions, zero spikes result in zero Rsync and few spikes result in very small Rsync values, usually below 0.05.
-            
-            Increasing mean and SD leads to more spikes. For interconnectivity weights of 20 mV, mean = 0.4 with SD = 1.0 correlates increased spikes, but Rsync stayed below 0.05, because spikes are still very scattered without visible patterns. This reflects a state where effects of interconnectivity are still smaller than the noise effect. At mean = 0.7 with SD = 0.5, the 20 mV weights condition first reaches an Rsync value above 0.05, with visual spike trains slowly separating, but reliable full ensemble runs not detectable yet. A mean of 0.7 produces some Rsync values over 0.05, correlating with incomplete patterns, but Rsync quickly subsides again with increasing SDs: The decrease in synchrony after a peak at SD 0.6 and 0.7 correlates with previous incomplete spike patterns beginning to overlap.
-            
-            At mean = 0.8, SD = 0.2 a first onset of higher synchrony (Rsync 0.21) was recorded. This correlates with first clearly separable and complete ensemble patterns. Synchrony steadily dissipates again after a certain peak (mean 0.8, SD 0.3), at the same time as patterns have moved as closely together in time to overlap. At this point, even once synchrony decreases with higher SD, it does not fall below Rsync of 0.05 until SD = 1.0, where patterns become inseparable. For this interconnectivity condition a global peak of synchrony (Rsync 0.59) was reached at mean = 0.9 and SD = 0.1, with the visually shortest patterns for this mean (Figure ~\ref{short_pattern}a) and b)).
-            
-            With increasing SD, patterns widen and move closer together. At mean = 0.9 in the step of SD = 0.3 to SD = 0.4, synchrony drops to a lower value (from Rsync 0.29 to 0.14). This Rsync drop correlates with the separation interval drastically shrinking. Following SDs at the same mean show the begin of overlapping patterns. At mean = 1.0 and SD = 0.1 synchrony is still comparably high (Rsync 0.44) but lower than for the previous mean (0.9) at the same SD value (Rsync 0.59). This decreased synchrony is reflected in shorter separation intervals compared to the previous mean (0.9) condition. Since 0.1 is the lowest possible SD value in this experiment, it can be assumed that synchrony would peak at even smaller SD values, but it is unclear if smaller SD values would be reasonably applicable.
 
             \begin{figure*}[t]
                 \centering
@@ -338,6 +338,16 @@
                 \caption{Rsync Results across different Interconnectivity Conditions}
                 \label{all_syncs}
             \end{figure*}
+            
+            
+        \subsection {Synchrony Analysis}
+            Next, spike behavior and synchrony were put into context: For this, spike plots were visually analyzed in the 600-800 ms window and related to the corresponding Rsync values (see Figure ~\ref{all_syncs}). For all interconnectivity conditions, zero spikes result in zero Rsync and few spikes result in very small Rsync values, usually below 0.05.
+
+            Increasing mean and SD leads to more spikes. For interconnectivity weights of 20 mV, mean = 0.4 with SD = 1.0 correlates increased spikes, but Rsync stayed below 0.05, because spikes are still very scattered without visible patterns. This reflects a state where effects of interconnectivity are still smaller than the noise effect. At mean = 0.7 with SD = 0.5, the 20 mV weights condition first reaches an Rsync value above 0.05, with visual spike trains slowly separating, but reliable full ensemble runs not detectable yet. A mean of 0.7 produces some Rsync values over 0.05, correlating with incomplete patterns, but Rsync quickly subsides again with increasing SDs: The decrease in synchrony after a peak at SD 0.6 and 0.7 correlates with previous incomplete spike patterns beginning to overlap.
+            
+            At mean = 0.8, SD = 0.2 a first onset of higher synchrony (Rsync 0.21) was recorded. This correlates with first clearly separable and complete ensemble patterns. Synchrony steadily dissipates again after a certain peak (mean 0.8, SD 0.3), at the same time as patterns have moved as closely together in time to overlap. At this point, even once synchrony decreases with higher SD, it does not fall below Rsync of 0.05 until SD = 1.0, where patterns become inseparable. For this interconnectivity condition a global peak of synchrony (Rsync 0.59) was reached at mean = 0.9 and SD = 0.1, with the visually shortest patterns for this mean (Figure ~\ref{short_pattern}a) and b)).
+
+            With increasing SD, patterns widen and move closer together. At mean = 0.9 in the step of SD = 0.3 to SD = 0.4, synchrony drops to a lower value (from Rsync 0.29 to 0.14). This Rsync drop correlates with the separation interval drastically shrinking. Following SDs at the same mean show the begin of overlapping patterns. At mean = 1.0 and SD = 0.1 synchrony is still comparably high (Rsync 0.44) but lower than for the previous mean (0.9) at the same SD value (Rsync 0.59). This decreased synchrony is reflected in shorter separation intervals compared to the previous mean (0.9) condition. Since 0.1 is the lowest possible SD value in this experiment, it can be assumed that synchrony would peak at even smaller SD values, but it is unclear if smaller SD values would be reasonably applicable.
             
             For the last mean (1.1), synchrony begins high again (Rsync 0.3), with the peak possibly out of range. Here patterns appear separable and very short, but with an already small separation time interval. Because of these short separation intervals, patterns quickly begin to merge as SD increases.
             
@@ -356,30 +366,31 @@
                 \item[\ref{diffpattern}] For similar separability intervals, shorter patterns showed higher synchrony (Rsync 0.54) than longer patterns (Rsync 0.25).
             \end{enumerate}
             It has to be noted that these observations are very sparse, because the experiment was aimed at a different purpose. Further research is needed to investigate the relationship of pattern length and separability as a predictor for synchrony.
-            
-            Comparing the global peaks of the 30 mV with the 40 mV interconnectivity condition, for the former, the same value (Rsync 0.58) is first recorded at mean = 0.8, SD = 0.2, whereas for the latter it already appears with mean = 0.7, SD = 0.3.  While with 30 mV weights this value is recorded twice under selected noise conditions, with 40 mV weights this value is recorded three times, most probably due to an earlier onset of synchrony. With increasing means this peak is consistently observed with decreasing SD values, which would predict it to fall out of range from mean = 1.0 onwards, after it was observed for the smallest SD value (0.1) for a mean of 0.9. This is indeed observed for both the 30 mV and 40 mV interconnectivity condition.
+
         \end{multicols}
         
-        \begin{table*}[h]
-            \centering
-            \caption{Pattern and Separation Intervals with 40 mV weights}
-    		\label{table1}
-            
-            \begin{tabular}{*5l}    \toprule
-                \textbf{Gaussian Mean} & \textbf{0.7} & \textbf{0.8} & \textbf{0.9} \\\midrule
-                \textbf{Gaussian SD} & \textbf{0.3} & \textbf{0.2} & \textbf{0.1} \\ 
-                Rsync & 0.58 & 0.58 & 0.58\\
-                Separation Intervals & \textgreater 150ms & \textgreater 150ms & \textgreater 150ms\\
-                Pattern Length & $\sim$ 5-8ms & $\sim$ 5-8ms & $\sim$ 5-8ms\\\midrule
-                \textbf{Gaussian SD} & \textbf{0.4} & \textbf{0.3} & \textbf{0.2} \\ 
-                Rsync & 0.46 & 0.54 & 0.50\\
-                Separation Intervals & $\sim$ 15-70ms   & $\sim$ 20-75ms & $\sim$ 15-50ms\\
-                Pattern Length & $\sim$ 8ms & $\sim$ 8ms & $\sim$ 5-8ms\\\bottomrule
-                \hline
-            \end{tabular}
-    	\end{table*}
+            \begin{table*}[h]
+                \centering
+                \caption{Pattern and Separation Intervals with 40 mV weights}
+                \label{table1}
+                
+                \begin{tabular}{*5l}    \toprule
+                    \textbf{Gaussian Mean} & \textbf{0.7} & \textbf{0.8} & \textbf{0.9} \\\midrule
+                    \textbf{Gaussian SD} & \textbf{0.3} & \textbf{0.2} & \textbf{0.1} \\ 
+                    Rsync & 0.58 & 0.58 & 0.58\\
+                    Separation Intervals & \textgreater 150ms & \textgreater 150ms & \textgreater 150ms\\
+                    Pattern Length & $\sim$ 5-8ms & $\sim$ 5-8ms & $\sim$ 5-8ms\\\midrule
+                    \textbf{Gaussian SD} & \textbf{0.4} & \textbf{0.3} & \textbf{0.2} \\ 
+                    Rsync & 0.46 & 0.54 & 0.50\\
+                    Separation Intervals & $\sim$ 15-70ms   & $\sim$ 20-75ms & $\sim$ 15-50ms\\
+                    Pattern Length & $\sim$ 8ms & $\sim$ 8ms & $\sim$ 5-8ms\\\bottomrule
+                    \hline
+                \end{tabular}
+            \end{table*}
 
         \begin{multicols}{2}
+            
+            Comparing the global peaks of the 30 mV with the 40 mV interconnectivity condition, for the former, the same value (Rsync 0.58) is first recorded at mean = 0.8, SD = 0.2, whereas for the latter it already appears with mean = 0.7, SD = 0.3.  While with 30 mV weights this value is recorded twice under selected noise conditions, with 40 mV weights this value is recorded three times, most probably due to an earlier onset of synchrony. With increasing means this peak is consistently observed with decreasing SD values, which would predict it to fall out of range from mean = 1.0 onwards, after it was observed for the smallest SD value (0.1) for a mean of 0.9. This is indeed observed for both the 30 mV and 40 mV interconnectivity condition.
             
         \subsection{Average Pattern Length Analysis}
             While conducting the experiment, I also recorded an average pattern length. However, the results do not reflect visually estimated pattern lengths consistently well under different noise conditions. This was likely due to the experimental nature of the recording method, as well as the strong variations in pattern lengths for some conditions. For completeness, results of the experimental pattern length measure are presented as well, although they were not used to draw definite conclusions.
