@@ -17,14 +17,14 @@
 \contentsline {subsection}{\numberline {4.2}Refractory Period}{7}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Noise}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Number of Neurons}{8}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Time Steps}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}Time Steps}{9}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Experimental Setup}{9}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Initial Condition}{9}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Experimental Measures}{9}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Hyperparameter Tuning}{9}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Noise Range}{9}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{9}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{10}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Gaussian Standard Deviation (SD)}{10}{subsubsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.2}Network Connectivity}{10}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Global Connectivity Percentage}{10}{subsubsection.6.2.1}%
@@ -49,4 +49,4 @@
 \contentsline {section}{\numberline {12}Code Availability}{21}{section.12}%
 \contentsline {section}{\numberline {13}Declaration of AI Use}{21}{section.13}%
 \contentsline {section}{\numberline {14}Acknowledgements}{22}{section.14}%
-\contentsline {section}{\numberline {15}Appendix}{26}{section.15}%
+\contentsline {section}{\numberline {15}Appendix}{27}{section.15}%
