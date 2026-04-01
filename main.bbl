@@ -235,6 +235,9 @@
       \field{year}{1997}
       \field{pages}{9248\bibrangedash 9260}
       \range{pages}{13}
+      \verb{doi}
+      \verb 0.1523/JNEUROSCI.17-23-09248.1997
+      \endverb
     \endentry
     \entry{W}{article}{}{}
       \name{author}{1}{}{%
@@ -274,6 +277,9 @@
       \field{year}{1998}
       \field{pages}{355\bibrangedash 370}
       \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/s0149-7634(97)00021-3
+      \endverb
     \endentry
     \entry{O}{article}{}{}
       \name{author}{3}{}{%
@@ -325,6 +331,9 @@
       \field{year}{2008}
       \field{pages}{428\bibrangedash 434}
       \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.tins.2008.06.002
+      \endverb
     \endentry
     \entry{ZB}{article}{}{}
       \name{author}{5}{}{%
@@ -388,6 +397,9 @@
       \field{year}{1997}
       \field{pages}{12699\bibrangedash 12704}
       \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.94.23.12699
+      \endverb
     \endentry
     \entry{AH}{article}{}{}
       \name{author}{3}{}{%
@@ -439,6 +451,9 @@
       \field{year}{2023}
       \field{pages}{e1011362}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1011362
+      \endverb
     \endentry
     \entry{ZN}{book}{}{}
       \name{author}{4}{}{%
@@ -535,6 +550,9 @@
       \field{year}{2009}
       \field{pages}{31}
       \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/neuro.09.031.2009
+      \endverb
       \keyw{brain scaling; encephalization; human; number of neurons}
     \endentry
     \entry{AF}{preprint}{}{}
@@ -618,6 +636,9 @@
       \field{eprintclass}{cs.LG}
       \field{title}{Scaling laws for neural language models}
       \field{year}{2020}
+      \verb{doi}
+      \verb 10.48550/arXiv.2001.08361
+      \endverb
       \verb{eprint}
       \verb 2001.08361
       \endverb
@@ -739,6 +760,60 @@
       \verb{url}
       \verb https://doi.org/10.1162/neco_a_00987
       \endverb
+    \endentry
+    \entry{AJ}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=977af8f1db84fb58af93246b1d70aae0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jun\bibnamedelima Haeng},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=485d396c71e5a4ace4dcfbfe5437e252}{%
+           family={Delbruck},
+           familyi={D\bibinitperiod},
+           given={Tobi},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0f677b59a524a4dfc082d7ba7e800e4f}{%
+           family={Pfeiffer},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media SA}%
+      }
+      \strng{namehash}{b0a8da6f797a21c5a032be2ad682a676}
+      \strng{fullhash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{fullhashraw}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{bibnamehash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authorbibnamehash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authornamehash}{b0a8da6f797a21c5a032be2ad682a676}
+      \strng{authorfullhash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authorfullhashraw}{e4b9936b83251c3de5f97570f6d4f32b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Front. Neurosci.}
+      \field{month}{11}
+      \field{title}{Training deep spiking neural networks using backpropagation}
+      \field{volume}{10}
+      \field{year}{2016}
+      \field{pages}{508}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.48550/arXiv.1608.08782
+      \endverb
+      \keyw{DVS; MNIST; N-MNIST; backpropagation; deep neural network; neuromorphic; spiking neural network}
     \endentry
     \entry{Z}{article}{}{}
       \name{author}{2}{}{%
@@ -977,6 +1052,9 @@
       \field{year}{1996}
       \field{pages}{3949\bibrangedash 3967}
       \range{pages}{19}
+      \verb{doi}
+      \verb 10.1152/jn.1996.76.6.3949
+      \endverb
     \endentry
     \entry{S}{book}{}{}
       \name{author}{6}{}{%
@@ -1154,6 +1232,9 @@
       \field{year}{2019}
       \field{pages}{6412}
       \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-019-42821-7
+      \endverb
     \endentry
     \entry{X}{article}{}{}
       \name{author}{2}{}{%
@@ -1314,6 +1395,9 @@
       \field{year}{2010}
       \field{pages}{e1000850}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1000850
+      \endverb
     \endentry
     \entry{B}{article}{}{}
       \name{author}{2}{}{%
@@ -1422,6 +1506,9 @@
       \field{year}{1997}
       \field{pages}{1950\bibrangedash 1953}
       \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.278.5345.1950
+      \endverb
     \endentry
     \entry{ZA}{article}{}{}
       \name{author}{5}{}{%
@@ -1485,6 +1572,9 @@
       \field{year}{1994}
       \field{pages}{1645\bibrangedash 1655}
       \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/j.1460-9568.1994.tb00556.x
+      \endverb
     \endentry
     \entry{G}{article}{}{}
       \name{author}{1}{}{%
@@ -1699,6 +1789,9 @@
       \field{year}{2001}
       \field{pages}{793\bibrangedash 810\bibrangessep discussion 810\bibrangedash 48}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1017/s0140525x01000097
+      \endverb
     \endentry
     \entry{A}{preprint}{}{}
       \name{author}{1}{}{%
@@ -1793,6 +1886,9 @@
       \field{title}{Implications of variable synaptic weights for rate and temporal coding of cerebellar outputs}
       \field{volume}{13}
       \field{year}{2024}
+      \verb{doi}
+      \verb 10.7554/eLife.89095
+      \endverb
       \keyw{Purkinje cell; cerebellum; deep cerebellar nuclei; disinhibition; mouse; neuroscience; rate code; time code}
     \endentry
     \entry{L}{article}{}{}
@@ -2068,6 +2164,9 @@
       \field{year}{1997}
       \field{pages}{9248\bibrangedash 9260}
       \range{pages}{13}
+      \verb{doi}
+      \verb 0.1523/JNEUROSCI.17-23-09248.1997
+      \endverb
     \endentry
     \entry{W}{article}{}{}
       \name{author}{1}{}{%
@@ -2107,6 +2206,9 @@
       \field{year}{1998}
       \field{pages}{355\bibrangedash 370}
       \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/s0149-7634(97)00021-3
+      \endverb
     \endentry
     \entry{O}{article}{}{}
       \name{author}{3}{}{%
@@ -2158,6 +2260,9 @@
       \field{year}{2008}
       \field{pages}{428\bibrangedash 434}
       \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.tins.2008.06.002
+      \endverb
     \endentry
     \entry{ZB}{article}{}{}
       \name{author}{5}{}{%
@@ -2221,6 +2326,9 @@
       \field{year}{1997}
       \field{pages}{12699\bibrangedash 12704}
       \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.94.23.12699
+      \endverb
     \endentry
     \entry{AH}{article}{}{}
       \name{author}{3}{}{%
@@ -2272,6 +2380,9 @@
       \field{year}{2023}
       \field{pages}{e1011362}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1011362
+      \endverb
     \endentry
     \entry{ZN}{book}{}{}
       \name{author}{4}{}{%
@@ -2368,6 +2479,9 @@
       \field{year}{2009}
       \field{pages}{31}
       \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/neuro.09.031.2009
+      \endverb
       \keyw{brain scaling; encephalization; human; number of neurons}
     \endentry
     \entry{AF}{preprint}{}{}
@@ -2451,6 +2565,9 @@
       \field{eprintclass}{cs.LG}
       \field{title}{Scaling laws for neural language models}
       \field{year}{2020}
+      \verb{doi}
+      \verb 10.48550/arXiv.2001.08361
+      \endverb
       \verb{eprint}
       \verb 2001.08361
       \endverb
@@ -2572,6 +2689,60 @@
       \verb{url}
       \verb https://doi.org/10.1162/neco_a_00987
       \endverb
+    \endentry
+    \entry{AJ}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=977af8f1db84fb58af93246b1d70aae0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jun\bibnamedelima Haeng},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=485d396c71e5a4ace4dcfbfe5437e252}{%
+           family={Delbruck},
+           familyi={D\bibinitperiod},
+           given={Tobi},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0f677b59a524a4dfc082d7ba7e800e4f}{%
+           family={Pfeiffer},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media SA}%
+      }
+      \strng{namehash}{b0a8da6f797a21c5a032be2ad682a676}
+      \strng{fullhash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{fullhashraw}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{bibnamehash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authorbibnamehash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authornamehash}{b0a8da6f797a21c5a032be2ad682a676}
+      \strng{authorfullhash}{e4b9936b83251c3de5f97570f6d4f32b}
+      \strng{authorfullhashraw}{e4b9936b83251c3de5f97570f6d4f32b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Front. Neurosci.}
+      \field{month}{11}
+      \field{title}{Training deep spiking neural networks using backpropagation}
+      \field{volume}{10}
+      \field{year}{2016}
+      \field{pages}{508}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.48550/arXiv.1608.08782
+      \endverb
+      \keyw{DVS; MNIST; N-MNIST; backpropagation; deep neural network; neuromorphic; spiking neural network}
     \endentry
     \entry{Z}{article}{}{}
       \name{author}{2}{}{%
@@ -2810,6 +2981,9 @@
       \field{year}{1996}
       \field{pages}{3949\bibrangedash 3967}
       \range{pages}{19}
+      \verb{doi}
+      \verb 10.1152/jn.1996.76.6.3949
+      \endverb
     \endentry
     \entry{S}{book}{}{}
       \name{author}{6}{}{%
@@ -2987,6 +3161,9 @@
       \field{year}{2019}
       \field{pages}{6412}
       \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41598-019-42821-7
+      \endverb
     \endentry
     \entry{X}{article}{}{}
       \name{author}{2}{}{%
@@ -3147,6 +3324,9 @@
       \field{year}{2010}
       \field{pages}{e1000850}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1000850
+      \endverb
     \endentry
     \entry{B}{article}{}{}
       \name{author}{2}{}{%
@@ -3255,6 +3435,9 @@
       \field{year}{1997}
       \field{pages}{1950\bibrangedash 1953}
       \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.278.5345.1950
+      \endverb
     \endentry
     \entry{ZA}{article}{}{}
       \name{author}{5}{}{%
@@ -3318,6 +3501,9 @@
       \field{year}{1994}
       \field{pages}{1645\bibrangedash 1655}
       \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/j.1460-9568.1994.tb00556.x
+      \endverb
     \endentry
     \entry{G}{article}{}{}
       \name{author}{1}{}{%
@@ -3532,6 +3718,9 @@
       \field{year}{2001}
       \field{pages}{793\bibrangedash 810\bibrangessep discussion 810\bibrangedash 48}
       \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1017/s0140525x01000097
+      \endverb
     \endentry
     \entry{A}{preprint}{}{}
       \name{author}{1}{}{%
@@ -3626,6 +3815,9 @@
       \field{title}{Implications of variable synaptic weights for rate and temporal coding of cerebellar outputs}
       \field{volume}{13}
       \field{year}{2024}
+      \verb{doi}
+      \verb 10.7554/eLife.89095
+      \endverb
       \keyw{Purkinje cell; cerebellum; deep cerebellar nuclei; disinhibition; mouse; neuroscience; rate code; time code}
     \endentry
     \entry{L}{article}{}{}

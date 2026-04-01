@@ -55,34 +55,28 @@
 
     \begin{center}
     \thispagestyle{empty}
-    \vspace{4cm}
-    \LARGE{University of Osnabrück}\\[-0.9ex]
-    \LARGE{Institute of Cognitive Science}\\[2ex]
+    \vspace*{3cm}
+    \LARGE{University of Osnabrück}\\[0.25ex]
+    \LARGE{Institute of Cognitive Science}\\[1.5ex]
     \large{Department of Neuroinformatics}\\
-    \vspace{0.3cm}
-    \begin{center}
-    \vspace{0.9cm}
+    \vspace*{0.3cm}
+    \vspace*{2cm}
     %\textbf{\LARGE{Bachelor Thesis}}
     \medskip\par
     %\textbf{\normalsize{submitted for the degree of}} \\[2ex]
-    \Large{Bachelor Thesis}}\\
-    \vspace{1.2cm}
-    \Large{\textbf{Noise-Induced Synchrony and the Effects on Spike Pattern Length in a Spiking Neural Network}}\\[-0.5ex]
+    \Large{Bachelor Thesis}\\
+    \vspace*{1.5cm}
+    \Large{\textbf{Noise-Induced Synchrony and the Effects on Spike Pattern Length in a Spiking Neural Network}}\\
+    \vspace*{1.5cm}
     %\large{Lorem ipsum dolor sit amet, consectetur adipiscing elit}\\[-1.5ex]
     \bigskip\par
-    by \par
-    \large{Dalia Muth}\\[-1ex]
-    \large{Matriculation Nr.: 1005371}\\ [-1ex]
-    \vspace{0.6cm}
+    \large{Dalia Muth}\\[0.5ex]
+    \large{Matriculation Nr.: 1005371}\\ [5ex]
+    \vspace*{2cm}
+    \\[1ex]
+    \large{Submission Date:  & 6th April 2026}\\[0.5ex]
+    \large{Supervisors: & MSc. Viktoriia Zemliak, Prof. Gordon Pipa}\\ [5ex]
     \end{center}
-    \medskip
-    \end{center}
-    \begin{tabular}{ll}
-    Submission Date:  & 6th April 2026 \\[-1ex]
-    \vspace{0.1cm}
-    Supervisors: & MSc. Viktoriia Zemliak, Prof. Gordon Pipa \\
-    \end{tabular}
-
 
     \newpage
     \tableofcontents
@@ -192,7 +186,7 @@
             In the integration step of the code, the neuron voltages are updated with the LIF calculation. The formula takes input currents and noise of the previous time step and calculates a membrane voltage update. The function then checks for a refractory period, where for all cases that are not in refractory, membrane voltage is compared to the threshold voltage and then updated. In the case that the neuron spiked after the voltage update, the last step is to reset the membrane voltage to the resting potential. Each of these steps is performed along the full neuron vector for one time step at the same time, because vector calculations are highly computationally efficient compared to loops. Code from \textcite{L} was used as a template to build this structure and adapted according to the simplified experimental use case. In the LIF formula (see Section ~\ref{sec:LIF}), voltage calculations modified by input currents are divided by the product of delta time and membrane time constant. Delta time represents the step size operated on, here set to 1 ms steps for simplicity. Analytically, the membrane time constant is the product of membrane capacitance and membrane resistance, which describes the rate at which the membrane rises or falls in biological neurons. The membrane time constant was set to 10, which lies within the biological range \cite{S}.
             
         \subsection{Simulation}
-            The \textit{simulate} function was built to run through each time step of the spiking neural network simulation. Voltage and spikes are recorded in separate matrices after each integration time step. The integration function inside the time steps loop is fed with a matrix of external and lateral input currents combined by a dot product. External input represents potential input streams from outside the networks, which was set to zero in the final experiment of this paper. Lateral input stems from the directed neuron connections inside the network. These inputs remain zero for connections where preceding neurons did not fire in the previous time step and are larger than zero for connections where preceding neurons did fire. Noise is added inside the integration function instead of combined into the input current matrix (see Figure ~\ref{diagram}).
+            The \textit{simulate} function was built to run through each time step of the spiking neural network simulation. Voltage and spikes are recorded in separate matrices after each integration time step. The integration function inside the time steps loop is fed with a matrix of external and lateral input currents, combined by a dot product. External input represents potential input streams from outside of the network, which was set to zero in the final experiment of this paper. Lateral input stems from the directed neuron connections inside the network. These inputs remain zero for connections where preceding neurons did not fire in the previous time step and are larger than zero for connections where preceding neurons did fire. Noise is added inside the integration function instead of combined into the input current matrix (Figure ~\ref{diagram}).
 
             \begin{figure}[H]
                 \centering
@@ -310,8 +304,8 @@
             \begin{itemize}[itemsep=0pt, topsep=2pt, leftmargin=1em, label=\tiny$\bullet$]
                 \item Gaussian mean: 0.1-1.1 (step size 0.1)
                 \item Gaussian SD: 0.1-1.1 (step size 0.1)
-                \item Global connectivity percentage per neuron: 5\%
-                \item Universal lateral connection weights: 20, 30, 40 mV.
+                \item Global connectivity percentage: 5\%
+                \item Uniform lateral connection weights: 20, 30, 40 mV.
             \end{itemize}
             It has to be noted that a seed was set for reproducibility, thus the experiment did not need to be run more than once in the same experimental condition.
 
