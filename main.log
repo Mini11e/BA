@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  1 APR 2026 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.3.20)  1 APR 2026 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -934,7 +934,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--135
  []
 
 [6] [7] [8] [9]
-<layer_diagram.png, id=433, 526.1256pt x 328.1058pt>
+<layer_diagram.png, id=438, 526.1256pt x 328.1058pt>
 File: layer_diagram.png Graphic file (type png)
 <use layer_diagram.png>
 Package pdftex.def Info: layer_diagram.png  used on input line 193.
@@ -944,35 +944,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--254
 []\OT1/cmr/bx/n/12 Gaussian Stan-dard De-vi-a-tion
  []
 
-<connectivity_network.png, id=486, 1316.7594pt x 359.9046pt>
+<connectivity_network.png, id=490, 1316.7594pt x 359.9046pt>
 File: connectivity_network.png Graphic file (type png)
 <use connectivity_network.png>
 Package pdftex.def Info: connectivity_network.png  used on input line 268.
 (pdftex.def)             Requested size: 483.69687pt x 132.20706pt.
 [13]
-<voltage_noise_only.png, id=517, 715.473pt x 375.804pt>
+<voltage_noise_only.png, id=521, 715.473pt x 375.804pt>
 File: voltage_noise_only.png Graphic file (type png)
 <use voltage_noise_only.png>
 Package pdftex.def Info: voltage_noise_only.png  used on input line 318.
 (pdftex.def)             Requested size: 386.95897pt x 203.24652pt.
  [14 <./connectivity_network.png>] [15 <./voltage_noise_only.png>]
-<few_spikes_0.2_1.0_20mv.png, id=541, 715.473pt x 375.804pt>
+<few_spikes_0.2_1.0_20mv.png, id=546, 715.473pt x 375.804pt>
 File: few_spikes_0.2_1.0_20mv.png Graphic file (type png)
 <use few_spikes_0.2_1.0_20mv.png>
 Package pdftex.def Info: few_spikes_0.2_1.0_20mv.png  used on input line 347.
 (pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
-<broken_patterns_0.6_0.7_20mv.png, id=542, 715.473pt x 375.804pt>
+<broken_patterns_0.6_0.7_20mv.png, id=547, 715.473pt x 375.804pt>
 File: broken_patterns_0.6_0.7_20mv.png Graphic file (type png)
 <use broken_patterns_0.6_0.7_20mv.png>
 Package pdftex.def Info: broken_patterns_0.6_0.7_20mv.png  used on input line 3
 49.
 (pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
-<patterns_0.8_0.3_20mv.png, id=543, 715.473pt x 375.804pt>
+<patterns_0.8_0.3_20mv.png, id=548, 715.473pt x 375.804pt>
 File: patterns_0.8_0.3_20mv.png Graphic file (type png)
 <use patterns_0.8_0.3_20mv.png>
 Package pdftex.def Info: patterns_0.8_0.3_20mv.png  used on input line 351.
 (pdftex.def)             Requested size: 236.84843pt x 124.40562pt.
-<merged_patterns_0.8_0.5_20mv.png, id=544, 715.473pt x 375.804pt>
+<merged_patterns_0.8_0.5_20mv.png, id=549, 715.473pt x 375.804pt>
 File: merged_patterns_0.8_0.5_20mv.png Graphic file (type png)
 <use merged_patterns_0.8_0.5_20mv.png>
 Package pdftex.def Info: merged_patterns_0.8_0.5_20mv.png  used on input line 3
@@ -984,25 +984,25 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 354.
 See the caption package documentation for explanation.
 
-<short_spikes_loc0.9_scale0.1_0.4_20mv.png, id=545, 715.473pt x 375.804pt>
+<short_spikes_loc0.9_scale0.1_0.4_20mv.png, id=550, 715.473pt x 375.804pt>
 File: short_spikes_loc0.9_scale0.1_0.4_20mv.png Graphic file (type png)
 <use short_spikes_loc0.9_scale0.1_0.4_20mv.png>
 Package pdftex.def Info: short_spikes_loc0.9_scale0.1_0.4_20mv.png  used on inp
 ut line 362.
 (pdftex.def)             Requested size: 483.69687pt x 254.05815pt.
-[16{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <.
-/few_spikes_0.2_1.0_20mv.png> <./broken_patterns_0.6_0.7_20mv.png> <./patterns_
-0.8_0.3_20mv.png> <./merged_patterns_0.8_0.5_20mv.png>]
+[16 <./few_spikes_0.2_1.0_20mv.png> <./broken_patterns_0.6_0.7_20mv.png> <./pat
+terns_0.8_0.3_20mv.png> <./merged_patterns_0.8_0.5_20mv.png>]
 
 LaTeX Warning: Reference `spike_patterns' on page 17 undefined on input line 37
 1.
 
-<all_syncs.png, id=562, 1141.1433pt x 380.8629pt>
+<all_syncs.png, id=566, 1141.1433pt x 380.8629pt>
 File: all_syncs.png Graphic file (type png)
 <use all_syncs.png>
 Package pdftex.def Info: all_syncs.png  used on input line 375.
 (pdftex.def)             Requested size: 483.69687pt x 161.43744pt.
-[17 <./short_spikes_loc0.9_scale0.1_0.4_20mv.png>]
+[17{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <.
+/short_spikes_loc0.9_scale0.1_0.4_20mv.png>]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
 94.
 
@@ -1017,68 +1017,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 409--410
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
+Underfull \hbox (badness 10000) in paragraph at lines 441--441
 []\OT1/cmr/bx/n/14.4 Average Pat-tern Length
  []
 
-[20] [21] [22]
-<model_connectivity.jpg, id=624, 462.528pt x 346.896pt>
+[20] [21] [22] [23]
+<model_connectivity.jpg, id=639, 462.528pt x 346.896pt>
 File: model_connectivity.jpg Graphic file (type jpg)
 <use model_connectivity.jpg>
-Package pdftex.def Info: model_connectivity.jpg  used on input line 488.
+Package pdftex.def Info: model_connectivity.jpg  used on input line 491.
 (pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--493
+Underfull \hbox (badness 10000) in paragraph at lines 496--496
 []\OT1/cmr/bx/n/14.4 Average Spike Pat-tern
  []
 
-[23] [24 <./model_connectivity.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 509--509
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
 [][]\OT1/cmr/m/n/12 Dampfhoffer, M., Mesquida, T.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--509
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
 \OT1/cmr/m/n/12 Backpropagation-based learn-ing tech-
  []
 
 
 Package biblatex Warning: No driver for 'preprint'.
-(biblatex)                Using fallback driver on input line 508.
+(biblatex)                Using fallback driver on input line 511.
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 509--509
+[25 <./model_connectivity.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
 [][]\OT1/cmr/m/n/12 Manjarrez, E., Rojas-Piloni, G.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--509
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
 \OT1/cmr/m/n/12 M^^Sendez-Balbuena, I., Mart^^S^^Pnez-Silva,
  []
 
 [26]
 
 Package biblatex Warning: No driver for 'preprint'.
-(biblatex)                Using fallback driver on input line 508.
+(biblatex)                Using fallback driver on input line 511.
 
 [27]
-<heatmaps_20mv.png, id=725, 867.24pt x 722.7pt>
+<heatmaps_20mv.png, id=734, 867.24pt x 722.7pt>
 File: heatmaps_20mv.png Graphic file (type png)
 <use heatmaps_20mv.png>
-Package pdftex.def Info: heatmaps_20mv.png  used on input line 517.
+Package pdftex.def Info: heatmaps_20mv.png  used on input line 520.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
-<heatmaps_30mv.png, id=726, 867.24pt x 722.7pt>
+<heatmaps_30mv.png, id=735, 867.24pt x 722.7pt>
 File: heatmaps_30mv.png Graphic file (type png)
 <use heatmaps_30mv.png>
-Package pdftex.def Info: heatmaps_30mv.png  used on input line 524.
+Package pdftex.def Info: heatmaps_30mv.png  used on input line 527.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
  [28 <./heatmaps_20mv.png>]
-<heatmaps_40mv.png, id=734, 867.24pt x 722.7pt>
+<heatmaps_40mv.png, id=742, 867.24pt x 722.7pt>
 File: heatmaps_40mv.png Graphic file (type png)
 <use heatmaps_40mv.png>
-Package pdftex.def Info: heatmaps_40mv.png  used on input line 531.
+Package pdftex.def Info: heatmaps_40mv.png  used on input line 534.
 (pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
- [29 <./heatmaps_30mv.png>] [30 <./heatmaps_40mv.png>] (./main.aux)
+ [29 <./heatmaps_30mv.png>]
+<heatmaps_noise_only.png, id=749, 867.24pt x 722.7pt>
+File: heatmaps_noise_only.png Graphic file (type png)
+<use heatmaps_noise_only.png>
+Package pdftex.def Info: heatmaps_noise_only.png  used on input line 541.
+(pdftex.def)             Requested size: 483.69687pt x 403.0882pt.
+ [30 <./heatmaps_40mv.png>] [31 <./heatmaps_noise_only.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1086,16 +1092,16 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C9614B21283A1F3FF86C0F0C26904ECC;7737.
+(rerunfilecheck)             Checksum: DBC2EE3BA984934F9B636C4794142F69;8019.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22730 strings out of 476041
- 404616 string characters out of 5793174
- 1877388 words of memory out of 6000000
- 42734 multiletter control sequences out of 15000+600000
+ 22743 strings out of 476041
+ 404897 string characters out of 5793174
+ 1876388 words of memory out of 6000000
+ 42743 multiletter control sequences out of 15000+600000
  523196 words of font info for 74 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  75i,13n,77p,1907b,5044s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1112,10 +1118,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (30 pages, 2939060 bytes).
+Output written on main.pdf (31 pages, 3153855 bytes).
 PDF statistics:
- 844 PDF objects out of 1000 (max. 8388607)
- 751 compressed objects within 8 object streams
- 165 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 859 PDF objects out of 1000 (max. 8388607)
+ 763 compressed objects within 8 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 503 words of extra memory for PDF output out of 10000 (max. 10000000)
 

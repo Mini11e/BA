@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {5.3}Experimental Measures}{12}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Hyperparameter Tuning}{12}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Noise Range}{12}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{12}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{13}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Gaussian Standard Deviation (SD)}{13}{subsubsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.2}Network Connectivity}{13}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Global Connectivity Percentage}{13}{subsubsection.6.2.1}%
@@ -32,16 +32,17 @@
 \contentsline {subsubsection}{\numberline {6.2.3}Overview}{14}{subsubsection.6.2.3}%
 \contentsline {section}{\numberline {7}Predictions}{14}{section.7}%
 \contentsline {section}{\numberline {8}Results}{15}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Voltage Analysis}{15}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.1}Voltage Analysis}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Spike Pattern Analysis}{16}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Synchrony Analysis}{17}{subsection.8.3}%
 \contentsline {subsubsection}{\numberline {8.3.1}20 mV Interconnectivity}{18}{subsubsection.8.3.1}%
 \contentsline {subsubsection}{\numberline {8.3.2}30 mV Interconnectivity}{18}{subsubsection.8.3.2}%
 \contentsline {subsubsection}{\numberline {8.3.3}40 mV Interconnectivity}{19}{subsubsection.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.4}Control Condition: Zero Interconnectivity}{20}{subsubsection.8.3.4}%
 \contentsline {subsection}{\numberline {8.4}Average Pattern Length Analysis}{20}{subsection.8.4}%
 \contentsline {section}{\numberline {9}Discussion}{21}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Interpretation of Findings}{21}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Implications}{21}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.2}Implications}{22}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Limitations}{22}{subsection.9.3}%
 \contentsline {section}{\numberline {10}Conclusion}{23}{section.10}%
 \contentsline {section}{\numberline {11}Methods}{23}{section.11}%
