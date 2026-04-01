@@ -52,8 +52,42 @@
 \title{Bachelor Thesis}
 
 \begin{document}
-	
 
+    \begin{center}
+    \thispagestyle{empty}
+    \vspace{4cm}
+    \LARGE{University of Osnabrück}\\[-0.9ex]
+    \LARGE{Institute of Cognitive Science}\\[2ex]
+    \large{Department of Neuroinformatics}\\
+    \vspace{0.3cm}
+    \begin{center}
+    \vspace{0.9cm}
+    %\textbf{\LARGE{Bachelor Thesis}}
+    \medskip\par
+    %\textbf{\normalsize{submitted for the degree of}} \\[2ex]
+    \Large{Bachelor Thesis}}\\
+    \vspace{1.2cm}
+    \Large{\textbf{Noise-Induced Synchrony and the Effects on Spike Pattern Length in a Spiking Neural Network}}\\[-0.5ex]
+    %\large{Lorem ipsum dolor sit amet, consectetur adipiscing elit}\\[-1.5ex]
+    \bigskip\par
+    by \par
+    \large{Dalia Muth}\\[-1ex]
+    \large{Matriculation Nr.: 1005371}\\ [-1ex]
+    \vspace{0.6cm}
+    \end{center}
+    \medskip
+    \end{center}
+    \begin{tabular}{ll}
+    Submission Date:  & 6th April 2026 \\[-1ex]
+    \vspace{0.1cm}
+    Supervisors: & MSc. Viktoriia Zemliak, Prof. Gordon Pipa \\
+    \end{tabular}
+
+
+    \newpage
+    \tableofcontents
+	
+    \newpage
 	\begin{figure}[H]
 		\raggedright
 	\end{figure}
@@ -345,7 +379,7 @@
             \begin{figure*}[t]
                 \centering
                 \includegraphics[width=\textwidth]{all_syncs.png}
-                \caption{Rsync Results across different Interconnectivity Conditions}
+                \caption{Rsync Results across Different Interconnectivity Conditions}
                 \label{all_syncs}
             \end{figure*}
             
@@ -429,8 +463,6 @@
 
             The results in this study could inspire future research to further investigate the underlying mechanism of synchrony emerging from noise. Promising insights may be derived from dynamical systems theory, where theories of the brain modeled as a dynamical system could reveal that neural pocessing may rely on noise for the emergence of synchrony \cite{Y}. Advancing theories about the emergence of synchrony through noise could then support the development of experiments to test whether this mechanism of noise-induced synchrony can actually be observed in biological neuronal networks.
 
-
-
         \subsection {Limitations}
             Because of the simplicity of this study, further research is needed on more biologically plausible models to confirm the shortening of patterns linked to increased synchrony. The model in this study was constructed to resemble a biological system as best as possible, however, due to the scope of the project, some variables were strongly simplified. One of these simplified variables are interconnection weights, which were set to a uniform weight value for each neuron in the network. In future experiments such lateral weight values should be drawn from a distribution to mimic the variability in connection strengths that biological neurons display \cite{J}. Furthermore, the network should be implemented with a learning algorithm and assigned a task, to provide evidence that pattern shortening correlating with synchrony is not solely produced under artificial circumstances, but also appears in actual applications of the network. A good example of models studying synchrony in task application are \textcite{L} and \textcite{M}, both investigated synchrony as a measure of familiarity. This type of task is particularly interesting in combination with a Spike-Time-Dependent Plasticity (STDP) learning algorithm, as it utilizes a form of Hebbian learning, a mechanism where synchrony is harnessed for Long-Term Potentiation (LTP) and Long-Term Depression (LTD) \cite{A, L}.
             
@@ -451,11 +483,11 @@
 		
 		\section{Methods}
 		\subsection{Spiking Model}\label{sec:LIF}
-            For the spiking model the Leaky Integrate-and-Fire (LIF) model was chosen, a state-of-the-art model for spiking neural networks \cite{A}. This model is inspired by electronic principles and allows taking membrane time constant, firing threshold and refractory period into account for the integration. It provides the advantage of simulating logarithmic external stimulus to neural output relationship, which is observed in neurons\cite{E}. The formula used in this paper was taken from \textcite{L}:
-            \begin{gather}\tau_{m}\frac{dV_{i}}{dt}=-(V_{i}-E_{L})+RI_{i}(t)\end{gather} where $dV$ is the membrane potential update with a step size of $dt$ in ms, with the time constant $\tau$ in ms. $V$ concerns the current voltage of the neuron, $E_{L}$ describes the resting potential and $RI_{i}(t)$ are the incoming synaptic currents. $R$ represents a finite leak resistance of the cell membrane \cite{L, ZN}.
+            For the spiking model, the Leaky Integrate-and-Fire (LIF) neuron was chosen, a state-of-the-art neuron model for spiking neural networks \cite{A}. This model is inspired by electronic principles and allow to take membrane time constant, firing threshold and refractory period into account for the integration. It provides the advantage of simulating a logarithmic external stimulus to neural output relationship, which is observed in biological neurons \cite{E}. The formula used in this paper was taken from \textcite{L}:
+            \begin{gather}\tau_{m}\frac{dV_{i}}{dt}=-(V_{i}-E_{L})+RI_{i}(t)\end{gather} where $dV$ is the membrane potential update with a step size of $dt$ in ms, and with the time constant $\tau$ in ms. $V$ concerns the current voltage of the neuron, $E_{L}$ describes the resting potential and $RI_{i}(t)$ are the incoming synaptic currents. $R$ represents a finite leak resistance of the cell membrane \cite{L, ZN}.
             
         \subsection{Synchrony Measure}\label{sec:sync}
-            To record synchrony, i.e. the degree to which neurons fire together, the Rsync measure was selected. The advantage of Rsync over other synchrony measures is its scalability to any high neuron population sizes. It works by averaging the population mean variance by the average individual neuron variance. Through this mechanism,  independently firing neurons push Rsync towards 0, whereas synchronous firing averages Rsync towards 1 \cite{L}. The Rsync formula was taken over from \textcite{L}: \begin{gather}R_{sync}(P, T) = \frac{\hat{\text{Var}}[\langle A_{i}(t) \rangle_{i \in P}]_{t \in T}}{\langle \hat{\text{Var}}[A_{i}(t)]_{t \in T} \rangle_{i \in P}}\end{gather} $P$ represents the encoded pattern of the neuron population and $T$ the time interval for measuring in ms. $A_{i}$ describes an activation trace of a neuron $i$ that is part of the population $P$. Activation traces become more similar with increasing synchrony, and would all be identical with perfect synchrony \cite{L}.
+            To record synchrony, i.e. the degree to which neurons fire together, the Rsync measure was selected. The advantage of Rsync over other synchrony measures is its scalability to any higher neuron population sizes. It works by averaging the population mean variance by the average individual neuron variance. Through this mechanism, independently firing neurons push Rsync towards 0, whereas synchronous firing averages Rsync towards 1 \cite{L}. The Rsync formula was taken over from \textcite{L}: \begin{gather}R_{sync}(P, T) = \frac{\hat{\text{Var}}[\langle A_{i}(t) \rangle_{i \in P}]_{t \in T}}{\langle \hat{\text{Var}}[A_{i}(t)]_{t \in T} \rangle_{i \in P}}\end{gather} $P$ represents the encoded pattern of the neuron population and $T$ the ms time interval. $A_{i}$ describes an activation trace of a neuron $i$ that is part of the population $P$. Activation traces become more similar with increasing synchrony, and would all be identical for perfect synchrony \cite{L}.
 
             \begin{figure*}[t]
                 \centering
@@ -465,30 +497,22 @@
             \end{figure*}
             
         \subsection{Average Spike Pattern Length}\label{sec:patternlen}
-            Average Spike Pattern Length is an experimental measure developed in this paper with the intention to make pattern length analysis comparable. For this method the total spike count across the whole neuron population was taken and each time step with at least one spike count was recorded as part of the pattern. Each coherent sequence of time steps with at least one spike was summed together as one pattern to yield the amount of time steps of one pattern, i.e. the pattern length. Any amount of empty time steps were defined as separation intervals or separation intervals, but were not recorded in length. Of the recorded pattern lengths per experimental condition a mean was taken, resulting in the Average Pattern Length Value. The choice to already count a singular spike as part of a pattern, versus selecting a threshold of at least a few multiple firings, was made under the assumption that even one spike would be of value in the pattern. Due to the strong interconnectivity of the network, it was expected that most singular spikes would activate further neurons in the next step. From that it was concluded that singular spikes were more likely to be informative than not.
+            Average Spike Pattern Length is an experimental measure developed for this paper, with the intention to make pattern length analysis comparable. For this method a total spike count across the whole neuron population was counted and each time step with at least one spike count was recorded as part of the pattern. Every coherent sequence of time steps with at least one spike was summed together as one pattern to yield the amount of time steps per pattern, i.e. the pattern length. Any amount of empty time steps were defined as separation intervals, but were not recorded in length. Of the recorded pattern lengths a mean was taken per experimental condition, resulting in the Average Pattern Length Value. The choice to count even singular spikes as part of patterns, versus selecting a threshold of at least a few multiple firings, was made under the assumption that one spike would already be of value to the pattern. Due to the strong interconnectivity of the network, it was expected that most singular spikes would activate further neurons in the following time step. From that it was concluded that singular spikes were more likely to be informative than not.
             
             It has to be noted that this measure is very limited in its informative value, because depending on the noise and interconnectivity condition, pattern length was more similar or more variable. It served to point towards a trend, but to ensure detailed and robust results, visual pattern analysis was considered more informative over the Average Pattern Length Value.
 
         \subsection{Model Connectivity}
-            To fit the scope of the experiment, a laterally connected 50 neuron network was set up with a 5\% connectivity value, which translates to each individual neuron in the network being connected to approximately 5\% of other neurons. The connectivity was set semi-randomly, with a random draw of connections but a rule for upper limit of incoming connections, in order to ensure balanced lateral connectivity. The weights of the network were set to a uniform value for the whole network, only differing this global weight value for different interconnectivity conditions. The network shown in Figure ~\ref{network} was used for all experimental runs.
+            To fit the scope of the experiment, a laterally connected 50 neuron network was set up with a 5\% connectivity value, which translates to each individual neuron in the network being connected to approximately 5\% of other neurons. Connectivity was set up semi-randomly, where a random draw was followed by a rule for an upper limit of incoming connections, to ensure balanced lateral connectivity. Weights between neurons were set to a uniform value for the whole network, only differing with interconnectivity conditions. The network shown in Figure ~\ref{network} was used for all experimental runs.
     
     \section {Code Availability}
         The code of the experiment and the experimental plots are available at \url{https://github.com/Mini11e/spiky\_project.git}.
     
     \section{Declaration of AI Use}
-        AI was explicitly not used for writing in any circumstance, unless in the background of browser applications for synonym and word search. For Google searches the AI assistant answers were occasionally taken as general input, but never used as a credible sources for any content written in this paper. For some \LaTeX\ code issues, AI was harnessed to debug or adapt code to improve formatting. In the beginning of the building process for the code of the experiment, AI was used once to create a small and simplistic model to gain an overview of what a model may be structured like. This model was completely discarded from the actual experiment, but the file can still be found in the codebase under \verb|/TEST_model_first_version_AI|
-.
-
-    \section {Acknowledgements}
-        This could be your acknowledgement.
+        AI was explicitly not used for writing in any circumstance, except within browser searches for synonyms and words. For Google searches the AI assistant answers were occasionally taken as general input, but never used as a credible sources for any content written in this paper. For some \LaTeX\ code issues, AI was harnessed to debug or adapt code to improve formatting. In the beginning of the code building process of the experiment, AI was used once to create a small and simplistic model to gain an overview of what a model may be structured like. This model was completely discarded from the actual experiment, but the file can still be found in the codebase under \verb|/TEST_model_first_version_AI|.
 
     
     \printbibliography
     \end{multicols}
-
-
-    \newpage
-    \tableofcontents
 
     \newpage
     \section{Appendix}

@@ -1,55 +1,54 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Synchrony Code}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Neural Noise}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Synchrony in Dynamical Systems Theory}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Hypothesis}{3}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Related Work}{3}{section.2}%
-\contentsline {section}{\numberline {3}The Model}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Layer Setup and Recurrency}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The Artificial Neuron}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Connectivity}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Voltage Input}{6}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Integration}{6}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Simulation}{7}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Hyperparameter Setup}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Resting Potential and Firing Threshold}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Refractory Period}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Noise}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Number of Neurons}{8}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Time Steps}{8}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Experimental Setup}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Initial Condition}{9}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Experimental Measures}{9}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Hyperparameter Tuning}{9}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Noise Range}{9}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{9}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Gaussian Standard Deviation (SD)}{10}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Network Connectivity}{10}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Global Connectivity Percentage}{10}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Uniform Connectivity Weights}{11}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Overview}{11}{subsubsection.6.2.3}%
-\contentsline {section}{\numberline {7}Predictions}{11}{section.7}%
-\contentsline {section}{\numberline {8}Results}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Voltage Analysis}{12}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Spike Pattern Analysis}{13}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Synchrony Analysis}{14}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}20 mV Interconnectivity}{15}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}30 mV Interconnectivity}{15}{subsubsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3}40 mV Interconnectivity}{16}{subsubsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.4}Average Pattern Length Analysis}{17}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Discussion}{18}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Interpretation of Findings}{18}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Implications}{18}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Limitations}{19}{subsection.9.3}%
-\contentsline {section}{\numberline {10}Conclusion}{20}{section.10}%
-\contentsline {section}{\numberline {11}Methods}{20}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Spiking Model}{20}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Synchrony Measure}{20}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Average Spike Pattern Length}{21}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Model Connectivity}{21}{subsection.11.4}%
-\contentsline {section}{\numberline {12}Code Availability}{21}{section.12}%
-\contentsline {section}{\numberline {13}Declaration of AI Use}{21}{section.13}%
-\contentsline {section}{\numberline {14}Acknowledgements}{22}{section.14}%
-\contentsline {section}{\numberline {15}Appendix}{27}{section.15}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Synchrony Code}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Neural Noise}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Synchrony in Dynamical Systems Theory}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Hypothesis}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Related Work}{6}{section.2}%
+\contentsline {section}{\numberline {3}The Model}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Layer Setup and Recurrency}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Artificial Neuron}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Connectivity}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Voltage Input}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Integration}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Simulation}{10}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Hyperparameter Setup}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Resting Potential and Firing Threshold}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Refractory Period}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Noise}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Number of Neurons}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Time Steps}{11}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Experimental Setup}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Initial Condition}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Experimental Measures}{12}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Hyperparameter Tuning}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Noise Range}{12}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Gaussian Mean}{12}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Gaussian Standard Deviation (SD)}{13}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Network Connectivity}{13}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Global Connectivity Percentage}{13}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Uniform Connectivity Weights}{14}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Overview}{14}{subsubsection.6.2.3}%
+\contentsline {section}{\numberline {7}Predictions}{14}{section.7}%
+\contentsline {section}{\numberline {8}Results}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Voltage Analysis}{15}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Spike Pattern Analysis}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Synchrony Analysis}{17}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}20 mV Interconnectivity}{18}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}30 mV Interconnectivity}{18}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}40 mV Interconnectivity}{19}{subsubsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.4}Average Pattern Length Analysis}{20}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Discussion}{21}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Interpretation of Findings}{21}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Implications}{21}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Limitations}{22}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Conclusion}{23}{section.10}%
+\contentsline {section}{\numberline {11}Methods}{23}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Spiking Model}{23}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Synchrony Measure}{23}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Average Spike Pattern Length}{24}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Model Connectivity}{24}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Code Availability}{24}{section.12}%
+\contentsline {section}{\numberline {13}Declaration of AI Use}{24}{section.13}%
+\contentsline {section}{\numberline {14}Appendix}{27}{section.14}%
