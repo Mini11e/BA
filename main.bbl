@@ -76,45 +76,6 @@
       \verb 10.1038/s41467-024-51390-x
       \endverb
     \endentry
-    \entry{H}{article}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=44ee245ab46012abbf3bfd5493ac4d59}{%
-           family={Brette},
-           familyi={B\bibinitperiod},
-           given={Romain},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{publisher}{1}{%
-        {Public Library of Science (PLoS)}%
-      }
-      \strng{namehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{fullhash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{fullhashraw}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{bibnamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorbibnamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authornamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorfullhash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorfullhashraw}{44ee245ab46012abbf3bfd5493ac4d59}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{PLoS Comput. Biol.}
-      \field{month}{6}
-      \field{number}{6}
-      \field{title}{Computing with neural synchrony}
-      \field{volume}{8}
-      \field{year}{2012}
-      \field{pages}{e1002561}
-      \range{pages}{-1}
-    \endentry
     \entry{AB}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=2c8e5572a9c7de1fe52c6ec1f991ec89}{%
@@ -1947,45 +1908,6 @@
       \verb{doi}
       \verb 10.1038/s41467-024-51390-x
       \endverb
-    \endentry
-    \entry{H}{article}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=44ee245ab46012abbf3bfd5493ac4d59}{%
-           family={Brette},
-           familyi={B\bibinitperiod},
-           given={Romain},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{publisher}{1}{%
-        {Public Library of Science (PLoS)}%
-      }
-      \strng{namehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{fullhash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{fullhashraw}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{bibnamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorbibnamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authornamehash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorfullhash}{44ee245ab46012abbf3bfd5493ac4d59}
-      \strng{authorfullhashraw}{44ee245ab46012abbf3bfd5493ac4d59}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{PLoS Comput. Biol.}
-      \field{month}{6}
-      \field{number}{6}
-      \field{title}{Computing with neural synchrony}
-      \field{volume}{8}
-      \field{year}{2012}
-      \field{pages}{e1002561}
-      \range{pages}{-1}
     \endentry
     \entry{AB}{article}{}{}
       \name{author}{4}{}{%
