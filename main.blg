@@ -1,21 +1,21 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [1] Config.pm:311> INFO - Logfile is 'main.blg'
-[129] biber:340> INFO - === Wed Apr  1, 2026, 19:35:14
-[159] Biber.pm:420> INFO - Reading 'main.bcf'
-[326] Biber.pm:994> INFO - Found 36 citekeys in bib section 0
-[359] Biber.pm:4463> INFO - Processing section 0
-[377] Biber.pm:4654> INFO - Looking for bibtex file 'sources.bib' for section 0
-[381] bibtex.pm:1713> INFO - LaTeX decoding ...
-[455] bibtex.pm:1519> INFO - Found BibTeX data source 'sources.bib'
-[1088] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1088] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1088] Biber.pm:4283> INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1089] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[1241] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1241] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1241] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1241] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[1321] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1388] bbl.pm:779> INFO - Output to main.bbl
-[1390] Biber.pm:131> WARN - legacy month field 'Oct' in entry 'B' is not an integer - this will probably not sort properly.
-[1390] Biber.pm:133> INFO - WARNINGS: 1
+[129] biber:340> INFO - === Thu Apr  2, 2026, 16:22:31
+[157] Biber.pm:420> INFO - Reading 'main.bcf'
+[328] Biber.pm:994> INFO - Found 36 citekeys in bib section 0
+[363] Biber.pm:4463> INFO - Processing section 0
+[380] Biber.pm:4654> INFO - Looking for bibtex file 'sources.bib' for section 0
+[384] bibtex.pm:1713> INFO - LaTeX decoding ...
+[459] bibtex.pm:1519> INFO - Found BibTeX data source 'sources.bib'
+[1100] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1100] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1100] Biber.pm:4283> INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1100] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[1252] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1252] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1252] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1252] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[1331] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1398] bbl.pm:779> INFO - Output to main.bbl
+[1399] Biber.pm:131> WARN - legacy month field 'Oct' in entry 'B' is not an integer - this will probably not sort properly.
+[1399] Biber.pm:133> INFO - WARNINGS: 1

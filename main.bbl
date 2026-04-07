@@ -185,14 +185,12 @@
     \endentry
     \entry{ZF}{article}{}{}
       \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=13b33a631ba0501788070ffb2671f4ed}{%
-           family={Oliveira},
-           familyi={O\bibinitperiod},
+        {{un=0,uniquepart=base,hash=8246319ddee529c497587af666258a03}{%
+           family={{De}\bibnamedelima Oliveira},
+           familyi={D\bibinitperiod\bibinitdelim O\bibinitperiod},
            given={S\bibnamedelima C},
            giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0,
-           prefix={de},
-           prefixi={d\bibinitperiod}}}%
+           givenun=0}}%
         {{un=0,uniquepart=base,hash=b883592a65f92c967dda69251ad34503}{%
            family={Thiele},
            familyi={T\bibinitperiod},
@@ -212,15 +210,15 @@
       \list{publisher}{1}{%
         {Society for Neuroscience}%
       }
-      \strng{namehash}{94fbdaa6ebfd2593397fda789612294a}
-      \strng{fullhash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{fullhashraw}{58d767a717b03a945d98e2ec224685fb}
-      \strng{bibnamehash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authorbibnamehash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authornamehash}{94fbdaa6ebfd2593397fda789612294a}
-      \strng{authorfullhash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authorfullhashraw}{58d767a717b03a945d98e2ec224685fb}
-      \field{sortinit}{d}
+      \strng{namehash}{80278b4eb76d154efd2122aa723161af}
+      \strng{fullhash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{fullhashraw}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{bibnamehash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authorbibnamehash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authornamehash}{80278b4eb76d154efd2122aa723161af}
+      \strng{authorfullhash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authorfullhashraw}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
@@ -2114,14 +2112,12 @@
     \endentry
     \entry{ZF}{article}{}{}
       \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=13b33a631ba0501788070ffb2671f4ed}{%
-           family={Oliveira},
-           familyi={O\bibinitperiod},
+        {{un=0,uniquepart=base,hash=8246319ddee529c497587af666258a03}{%
+           family={{De}\bibnamedelima Oliveira},
+           familyi={D\bibinitperiod\bibinitdelim O\bibinitperiod},
            given={S\bibnamedelima C},
            giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0,
-           prefix={de},
-           prefixi={d\bibinitperiod}}}%
+           givenun=0}}%
         {{un=0,uniquepart=base,hash=b883592a65f92c967dda69251ad34503}{%
            family={Thiele},
            familyi={T\bibinitperiod},
@@ -2141,15 +2137,15 @@
       \list{publisher}{1}{%
         {Society for Neuroscience}%
       }
-      \strng{namehash}{94fbdaa6ebfd2593397fda789612294a}
-      \strng{fullhash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{fullhashraw}{58d767a717b03a945d98e2ec224685fb}
-      \strng{bibnamehash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authorbibnamehash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authornamehash}{94fbdaa6ebfd2593397fda789612294a}
-      \strng{authorfullhash}{58d767a717b03a945d98e2ec224685fb}
-      \strng{authorfullhashraw}{58d767a717b03a945d98e2ec224685fb}
-      \field{sortinit}{d}
+      \strng{namehash}{80278b4eb76d154efd2122aa723161af}
+      \strng{fullhash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{fullhashraw}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{bibnamehash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authorbibnamehash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authornamehash}{80278b4eb76d154efd2122aa723161af}
+      \strng{authorfullhash}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \strng{authorfullhashraw}{6dc2ee6ee50bfae10aff82cffeadf642}
+      \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
